@@ -1,10 +1,20 @@
 import "../style/homepage.css";
 import { FcGoogle } from "react-icons/fc";
+import { IoIosArrowUp,IoIosArrowDown } from "react-icons/io";
+import { useState } from "react";
 
 const exploreTopics = ["See All Topics", "Remote", "Work from Home", "Retirement", "Internships", "Freelancer", "Salary and Compensation","Starting a job"]
-
-
+const findjobless = ["Engineering", "Business Development", "Finance", "Administrative Assistant", "Retail Associate", "Customer Service", "Operations", "Information Technology", "Marketing", "Human Resources"]
+const findjobmore = [" Healthcare Service", "Sales", "Program and Project Management", "Accounting", "Arts and Design", "Community and Social Services", "Consulting", "Education", "Entrepreneurship", "Legal", "Media and Communications", "Military and Protective Services", "Product Management", "Purchasing", " Quality Assurance", "Real Estate", "Research", "Support","Administrative"]
 export const HomePage = () => {
+    const [job, setJob] = useState(findjobless);
+    const [jobBtn, setJobBtn] = useState(false);
+
+    const handleJob = () => {
+        if (!jobBtn) { setJob([...findjobless, ...findjobmore]) }
+        else { setJob(findjobless) };
+        setJobBtn(!jobBtn);   
+    }
 
     return <div id="HomePage">
 
@@ -36,11 +46,11 @@ export const HomePage = () => {
         <div id="exploreDiv">
             <div id="exploreDivContent">
 
-                <div id="exploreDivLeft">
+                <div className="exploreDivLeft">
                     <p>Explore topics you are interested in</p>
                 </div>
 
-                <div id="exploreDivRight">
+                <div className="exploreDivRight">
                     <p>CONTENT TOPICS</p>
                     <div id="exploreDivRightContent">
                         {
@@ -55,9 +65,40 @@ export const HomePage = () => {
 
         </div>
 
-        <div id="findJobDiv"></div>
+        <div id="findJobDiv">
+            <div id="findJobDivContent">
 
-        <div id="postJobDiv"></div>
+                <div className="exploreDivLeft">
+                    <p>Find the right job or internship for you</p>
+                </div>
+
+                <div className="exploreDivRight">
+                    <p>SUGGESTED SEARCHES</p>
+                    <div id="findJobDivRightContent">
+                        {
+                            job.map((item) => {
+                                return <div className="findJobDivRightContentSIngle">{item}</div>
+                            })
+                        }
+                    </div>
+                    <button id="showMore" onClick={handleJob}><p>{!jobBtn ? "Show more" : "Show less"}</p>{!jobBtn ? <IoIosArrowDown/> : <IoIosArrowUp/>}</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="postJobDiv">
+            <div id="postJobDivContent">
+
+                <div className="postJobDivLeft">
+                    <p>Post your job for millions of people to see</p>
+                </div>
+                <div className="exploreDivRight">
+                        <div className="exploreDivRightContentSIngle" id="postAjob">Post a job</div>
+                </div>
+
+            </div>
+        </div>
 
         <div id="rightPeopleDiv"></div>
 

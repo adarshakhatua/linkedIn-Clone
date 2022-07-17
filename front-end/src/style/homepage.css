@@ -155,29 +155,48 @@ input:not(:focus)+label{
     border: 2px solid #242424;
 }
 #exploreDiv{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 364px;
     display: flex;
     align-items: center;
+    background-color: #F3F2F0;
 }
-#exploreDivContent{
+#exploreDivContent,#findJobDivContent,#postJobDivContent{
     width: 1128px;
-    margin: auto;
     display: flex;
+    margin: 50px auto;
+    /* border: 1px solid black; */
 }
-#exploreDivLeft{
-    border: 1px solid black;
+.exploreDivLeft{
+    /* border: 1px solid black; */
+    width: 550px;
 }
-#exploreDivLeft p{
+.exploreDivLeft p{
     font-size: 48px;
     font-weight: 200;
     line-height: 60px;
     text-align: left;
+    margin-top: 10px;
 }
-#exploreDivRight{
-    border: 1px solid black;
+.exploreDivRight{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 244px;
+    width: 660px;
 }
-.exploreDivRightContentSIngle{
+.exploreDivRight p{
+    font-size: 16px;
+    font-weight: 600;
+    color: #585858;
+}
+#exploreDivRightContent,#findJobDivRightContent,#postJobDivRight{
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.exploreDivRightContentSIngle,.findJobDivRightContentSIngle{
     font-size: 20px;
     font-weight: 600;
     line-height: 30px;
@@ -186,4 +205,62 @@ input:not(:focus)+label{
     border: 1px solid rgb(75, 75, 75);
     display: inline-block;
     color: rgb(76, 76, 76);
+    margin: 4px;
+    cursor: pointer;
+}
+.exploreDivRightContentSIngle:hover,.findJobDivRightContentSIngle:hover{
+    background-color: #ebebeb;
+    color: #242424;
+}
+.exploreDivRightContentSIngle:first-child{
+    border: 1px solid #0A66C2;
+    color: #0A66C2;
+}
+.exploreDivRightContentSIngle:first-child:hover{
+    background-color: #E5EBF1;
+}
+#findJobDiv{
+    min-height: 364px;
+    display: flex;
+    align-items: center;
+}
+#showMore{
+    height: 48px;
+    padding:2px 8px;
+    border: 1px solid transparent;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    border-radius: 4px;
+}
+#showMore:hover{
+    background-color: #f0efef;
+}
+#postJobDiv{
+    background-color: #F1ECE5;
+    display: flex;
+}
+#postJobDivContent{
+    display: flex;
+    align-items: center;
+}
+.postJobDivLeft{
+    width: 550px;
+}
+.postJobDivLeft p{
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
+    color: #B24020;
+    width: 413px;
+    height: 150px;
+    text-align: left;
+    /* border: 1px solid black; */
+    margin-top: 10px;
+}
+#postAjob{
+    margin-top: 70px;
 }
