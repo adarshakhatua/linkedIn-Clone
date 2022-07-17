@@ -1,0 +1,189 @@
+.field {
+    display: flex;
+    flex-flow: column-reverse;
+    margin-bottom: 1em;
+    height: 50px;
+    width: 408px;
+    border: 1px solid black;
+    transform-origin: 0 0;
+}
+label{
+    color: #666666;
+}
+label,input {
+    transition: all 0.2s;
+    touch-action: manipulation;
+}
+input {
+    font-size: 1em;
+    border: 0;
+    /* border: 1px solid #ccc; */
+    font-family: inherit;
+    -webkit-appearance: none;
+    border-radius: 0;
+    padding: 0px 0px 5px 10px;
+    cursor: text;
+    
+}
+input:focus {
+    outline: 0;
+}
+
+input:focus +label {
+    cursor: text;
+    max-width: 66.66%;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-left: 10px;
+    text-align: left;
+    transform-origin: left bottom;
+    color: #666666;
+    transform: translate(0rem, 0rem) scale(0.8);
+    
+}
+::-webkit-input-placeholder {
+    opacity: 0;
+    transition: inherit;
+}
+input:not(:focus)+label{
+    text-align: left;
+    padding-left: 10px;
+    transform: translate(0rem, 0.6rem) scale(1);
+    cursor: pointer;
+}
+#showBtn{
+    position: absolute;
+    left: 735px;
+    top: 370px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 32px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+    color: #666666;
+    padding: 0px 8px;;
+    cursor: pointer;
+}
+#showBtn:hover{
+    background-color: #f4f4f4;
+}
+
+#welcomeDiv{
+    /* border: 1px solid black; */
+    width: 1128px;
+    margin: auto;
+    display: flex;
+    box-sizing: border-box;
+    margin: 50px auto;
+}
+#welcomeDivContent{
+    /* border: 1px solid black; */
+    padding: 0px 40px 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+#welcomeDivContent h1{
+    /* border: 1px solid black; */
+    margin-top:0px ;
+    font-size: 56px;
+    font-weight: 200;
+    color: #8F5849;
+    line-height: 67.2px;
+    width: 578.391px;
+    text-align: left;
+}
+#welcomeDivImage img{
+    height: 560px;
+    width: 700px;
+}
+#forgetPassword {
+    font-size: 16px;
+    line-height: 24px;
+    text-align: left;
+    cursor: pointer;
+    margin: 5px 0px 5px;
+}
+#forgetPassword:hover {
+    text-decoration: underline;
+    color: #0A66C2;
+}
+#signInBtn{
+    height: 56px;
+    width: 408px;
+    background-color: #0A66C2;
+    color: white;
+    font-size: 20px;
+    border: 1px solid #0A66C2;
+    border-radius: 30px;
+    margin: 10px 0px;
+}
+#signInBtn:hover{
+    background-color: #006097;
+}
+#horizontalLine{
+    width: 408px;
+    border-bottom: 1px solid #d1d1d1;
+    margin: 20px 0px;
+}
+#or{
+    position: absolute;
+    padding: 0px 20px;
+    top:545px;
+    left: 565px;
+    background-color: white;
+    color: #878787;
+    /* border: 1px solid black; */
+}
+#googleSignInBtn {
+    height: 56px;
+    width: 408px;
+    background-color: white;
+    color: #616161;
+    font-size: 20px;
+    border: 1px solid #616161;
+    border-radius: 30px;
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#googleSignInBtn p{
+    margin: 0px 20px;
+}
+#googleSignInBtn:hover{
+    border: 2px solid #242424;
+}
+#exploreDiv{
+    border: 1px solid red;
+    height: 364px;
+    display: flex;
+    align-items: center;
+}
+#exploreDivContent{
+    width: 1128px;
+    margin: auto;
+    display: flex;
+}
+#exploreDivLeft{
+    border: 1px solid black;
+}
+#exploreDivLeft p{
+    font-size: 48px;
+    font-weight: 200;
+    line-height: 60px;
+    text-align: left;
+}
+#exploreDivRight{
+    border: 1px solid black;
+}
+.exploreDivRightContentSIngle{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    padding: 12px 24px;
+    border-radius: 28px;
+    border: 1px solid rgb(75, 75, 75);
+    display: inline-block;
+    color: rgb(76, 76, 76);
+}

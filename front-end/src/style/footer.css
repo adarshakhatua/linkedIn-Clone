@@ -11,12 +11,15 @@ footer {
     margin: auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 #footerLogoDiv {
     height: 340px;
     width: 300px;
     padding: 4px 0px;
+    /* border: 1px solid black; */
+    display: flex;
 }
 
 #footerLogoDiv img {
@@ -27,7 +30,8 @@ footer {
 #FooterContentSingle {
     /* border: 1px solid black; */
     height: 340px;
-    width: 192px;
+    width: 174px;
+    text-align: left;
 }
 
 #FooterContentSingle h4 {
@@ -43,7 +47,7 @@ footer {
     line-height: 20px;
     margin: 0px;
     padding: 2px;
-    color: #787878;
+    color: #777777;
     cursor: pointer;
 }
 
@@ -51,4 +55,44 @@ footer {
     font-weight: 600;
     color: #0A66C2;
     text-decoration: underline;
+}
+#copyrightDiv{
+    /* border: 1px solid black; */
+    height: 40px;
+    width: 1128px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+#copyrightDiv img{
+    height:15px ;
+    margin: 5px 0px;
+}
+.singleFoolterTxt{
+    font-size: 12px;
+    font-weight: 600;
+    color: #909090;
+    cursor: pointer;
+    margin: 5px 0px;
+}
+.singleFoolterTxt:hover{
+    color:#0A66C2;
+    text-decoration: underline;
+}
+.singleFoolterTxtFirst{
+    font-size: 12px;
+    font-weight: 400;
+    color: #909090;
+    cursor: pointer;
+    margin: 5px 0px;
+}
+.singleFoolterTxtLast{
+    font-size: 12px;
+    font-weight: 600;
+    color: #909090;
+    cursor: pointer;
+    margin: 5px 0px;
+}
+.singleFoolterTxtLast:hover{
+    color: #0A66C2;
 }

@@ -1,12 +1,16 @@
 import "../style/footer.css";
 import logo from "../files/navLogo.svg";
+import footerlogo from "../files/footerlogo.svg";
+import { IoIosArrowDown } from "react-icons/io";
+
 const general = ["Sign Up", "Help Center", "About", "Press", "Blog", "Careers", "Developers"];
 const BrowseLinkedI = ["Learning", "Jobs", "Salary", "Mobile", "Services", "Products"];
 const BusinessSolutions = ["Talent", "Marketing", "Sales", "Learning"];
 const Directories = ["Members", "Jobs", "Companies", "Featured", "Learning", "Posts", "Articles", "Schools", "News", "News Letters", "Services", "Products", "Content Topics"]
+const copyRightDiv = [ "About", "Accessibility", "User Agreement", "Privacy Policy", "Cookie Policy", "Copyright Policy", "Brand Policy", "Guest Controls","Community Guidelines"]
 
 export const Footer = () => {
-
+    document.getElementById("copyrightDiv")
 
     return <footer>
         <div id="footerLogo">
@@ -20,6 +24,17 @@ export const Footer = () => {
                 <FooterContentSingle heading={"Directories"} data={Directories}></FooterContentSingle>
             </div>
         </div>
+
+        <div id="copyrightDiv">
+            <img src={footerlogo} alt="" />
+            <div className="singleFoolterTxtFirst">© 2022</div>
+            {copyRightDiv.map((item) => {
+                return <div className="singleFoolterTxt">{ item}</div>
+            })}
+            <div className="singleFoolterTxtLast">language  <IoIosArrowDown /></div>
+           
+        </div>
+
     </footer>
 }
 
