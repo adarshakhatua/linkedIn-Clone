@@ -264,3 +264,101 @@ input:not(:focus)+label{
 #postAjob{
     margin-top: 70px;
 }
+
+#rightPeopleDiv{
+    height: 840px;
+    /* border: 1px solid black; */
+    display: flex;
+    background-color: #F3F2F0;
+}
+#rightPeopleDivContent{
+    height: 550px;
+    width: 1128px;
+    margin: auto;
+    /* border: 1px solid red; */
+}
+#rightPeopleDivSliderBtn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 40px;
+    margin: 20px 0px;
+}
+#rightPeopleDivSliderBtn button{
+    height: 40px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid transparent;
+    background-color: transparent;
+    margin: 5px;
+}
+
+#rightPeopleDivSliderBtn button:hover{
+    background-color: #e9e9e9;
+}
+#rightPeopleDivSliderBtn button p{
+    color: #585858;
+}
+#slider{
+    display: flex;
+    width: 1120px;
+    /* border: 1px dotted black; */
+    overflow-x: scroll;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+}
+#slider::-webkit-scrollbar{
+    display: none;
+}
+.rightPeopleDivSlider{
+    /* border: 1px solid red; */
+    display: flex;
+}
+#rightPeopleDivSliderLeft{
+    width: 564px;
+    /* border: 1px solid violet; */
+    padding-right: 70px;
+}
+#rightPeopleDivSliderLeft h1{
+    font-size: 40px;
+    line-height: 50px;
+    color: #8F5849;
+    font-weight: 400;
+    text-align: left;
+}
+#rightPeopleDivSliderLeft p{
+    font-size: 32px;
+    font-weight: 200;
+    line-height: 40px;
+    text-align: left;
+}
+#rightPeopleDivSliderRight{
+    height: 450px;
+    width: 450px;
+    border-radius: 50%;
+    padding-right: 40px;
+    /* border: 1px solid black; */
+}
+#rightPeopleDivSliderRight img{
+    height: 100%;
+    width: 100%;
+}
+#rightPeopleDivSliderBtn .notAllowed {
+    cursor: not-allowed;
+}
+
+#rightPeopleDivSliderBtn .notAllowed{
+    color: #b8b8b8;
+}
+#rightPeopleDivSliderBtn .notAllowed:hover{
+    background-color: transparent;
+}
+#rightPeopleDivSliderBtn .notAllowed p{
+    color: #b8b8b8;
+}
