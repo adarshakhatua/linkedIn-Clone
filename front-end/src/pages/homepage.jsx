@@ -4,6 +4,7 @@ import { IoIosArrowUp, IoIosArrowDown, IoIosArrowBack, IoIosArrowForward, IoMdAr
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
+import { TabTitle } from "../utils/generalFunction";
 
 const exploreTopics = ["See All Topics", "Remote", "Work from Home", "Retirement", "Internships", "Freelancer", "Salary and Compensation","Starting a job"]
 const findjobless = ["Engineering", "Business Development", "Finance", "Administrative Assistant", "Retail Associate", "Customer Service", "Operations", "Information Technology", "Marketing", "Human Resources"]
@@ -167,6 +168,7 @@ const option = [
 
 
 export const HomePage = () => {
+    TabTitle("LinkedIn: Log In or Sign Up")
     const [job, setJob] = useState(findjobless);
     const [jobBtn, setJobBtn] = useState(false);
     const [optioon, setOptioon] = useState(false);
