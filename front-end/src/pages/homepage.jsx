@@ -1,6 +1,6 @@
 import "../style/homepage.css";
 import { FcGoogle } from "react-icons/fc";
-import { IoIosArrowUp, IoIosArrowDown, IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowUp, IoIosArrowDown, IoIosArrowBack, IoIosArrowForward, IoMdArrowDropdown } from "react-icons/io";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useRef } from "react";
@@ -25,16 +25,161 @@ const sliderData = [
         Image: "https://static-exp2.licdn.com/aero-v1/sc/h/ann24vsq7r0ux3vipqa1n90gg",
     }
 ]
+const option = [
+    {
+        name: "Training and Education",
+        count:"290+ courses"
+    },
+    {
+        name: "IT Help Desk", 
+        count: "290+ courses"
+    },
+    {
+        name: "Security",
+        count: "560 + courses"
+    },
+    {
+        name: "Business Software and Tools",
+        count: "1, 900 + course"
+    },
+    {
+        name: "Professional Development",
+        count: "1, 300 + course"
+    },
+    {
+        name: "Customer Service",
+        count: " 170 + courses"
+    },
+    {
+        name: "Small Business and Entrepreneurship",
+        count: "320 + courses"
+    },
+    {
+        name: " DevOps",
+        count: " 220 + courses"
+    },
+    {
+        name: " Human Resources",
+        count: "420 + courses"
+    },
+    {
+        name: " Sales",
+        count: " 220 + courses"
+    },
+    {
+        name: "Product and Manufacturing",
+        count: "1, 400 + course"
+    },
+    {
+        name: "Web Development",
+        count: "1, 300 + course"
+    },
+    {
+        name: "Database Management",
+        count: "280 + courses"
+    },
+    {
+        name: " Web Design",
+        count: "520 + courses"
+    },
+    {
+        name: "Business Analysis and Strategy", 
+        count: "760+ courses"
+    },
+    {
+    name: "User Experience",
+        count: " 510 + courses"
+    },
+    {
+    name: "Software Development",
+        count: "1, 800 + course "
+    },
+    {
+    name: "Network and System Administration",
+        count: "1, 100 + course"
+    },
+    {
+    name: "Data Science",
+        count: "790 + courses"
+    },
+    {
+    name: "Video",
+        count: "590 + courses"
+    },
+    {
+    name: "Photography",
+        count: "1, 100 + course"
+    },
+    {
+    name: "Motion Graphics and VFX",
+        count: "890 + courses"
+    },
+    {
+    name: "Graphic Design",
+        count: "950 + courses"
+    },
+    {
+        name: "AEC",
+        count: "1, 400 + course"
+    },
+    {
+        name: "Audio and Music",
+        count: "400 + courses"
+    },
+    {
+        name: "Animation and Illustration",              
+        count: "1, 600 + course"
+    },
+    {
+        name: "Visualization and Real - Time",
+        count: "1, 200 + course"
+    },
+    {
+        name: "Project Management",
+        count: "370 + courses"
+    },
+    {
+        name: "Cloud Computing",
+        count: "820 + courses"
+    },
+    {
+        name: "Marketing",
+        count: "790 + courses"
+    },
+    {
+        name: "Mobile Development",
+        count: "460 + courses"
+    },
+    {
+        name: "Leadership and Management",
+        count: "1, 300 + course"
+    },
+    {
+        name: "Finance and Accounting",
+        count: "260 + courses"
+    },
+    {
+        name: "Career Development",
+        count: "450 + courses"
+    },
+                    
+]
 
 
 export const HomePage = () => {
     const [job, setJob] = useState(findjobless);
     const [jobBtn, setJobBtn] = useState(false);
+    const [optioon, setOptioon] = useState(false);
+
 
     const handleJob = () => {
         if (!jobBtn) { setJob([...findjobless, ...findjobmore]) }
         else { setJob(findjobless) };
         setJobBtn(!jobBtn);   
+    }
+
+    const handleOptioon = () => {
+        setOptioon(!optioon);
     }
 
     return <div id="HomePage">
@@ -126,11 +271,65 @@ export const HomePage = () => {
             
         </div>
 
-        <div id="connectPeopleDiv"></div>
+        <div id="connectPeopleDiv">
+            <div id="connectPeopleDivContent">
 
-        <div id="videoDiv"></div>
+                <div className="connectPeopleDivContentSigle">
+                    <div className="imgDiv">
+                        <img src="https://static-exp2.licdn.com/aero-v1/sc/h/b1fxwht7hdbeusleja7ciftsj" alt="" />
+                    </div>
+                    <h3>Connect with people who can help</h3>
+                    <button>Find people you know</button>
+                </div>
 
-        <div id="joinYourCollegeDiv"></div>
+                <div className="connectPeopleDivContentSigle">
+                    <div className="imgDiv">
+                        <img src="https://static-exp2.licdn.com/aero-v1/sc/h/dkfub4sc7jgzg3o31flfr91rv" alt="image" />
+                    </div>
+                    <h3>Learn the skills you need to succeed</h3>
+
+                    <div name="choose topic" id="chooseTopic" onClick={handleOptioon}>
+                        <h3 value="" className="optionDropdown">Choose a topic to learn about <IoMdArrowDropdown fontSize={"30px"} color={ "##4a4a4a"} /></h3>
+                    </div>
+                    {optioon &&<div id="optionDiv">
+                        {option.map((item) => { return <div className="optionDropdown"><h4>{item.name}</h4><p>{item.count}</p></div> })}
+                    </div>}
+                </div>
+
+            </div>
+        </div>
+
+        <div id="videoDiv">
+            <div id="VideoDivContent">
+                <div id="backGround"></div>
+                <div id="video">
+                    <div id="player">
+                        <iframe
+                            width="500px"
+                            height="378px"
+                            src="https://www.youtube.com/embed/IlYUUN8rL_Y"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                            
+                        </iframe>
+                    </div>
+
+                    <div id="Text"><h3>In it to chase my dream</h3></div>
+                </div>
+                <div id="nothing"></div>
+            </div>
+        </div>
+
+        <div id="joinYourCollegeDiv">
+
+            <div id="joinYourCollegeDivContent">
+                <h1>Join your colleagues, classmates, and friends on LinkedIn.</h1>
+                <button>Get started</button>
+            </div>
+
+        </div>
     </div>
 }
 
@@ -168,7 +367,7 @@ const Slider = () => {
             setClassPrev("");
         }
     }
-    console.log(index)
+
    
     useEffect(() => {
         if (index === 0) { setPrev(false); setClassPrev("notAllowed"); }
@@ -210,3 +409,4 @@ const Slider = () => {
 
     </div>
 }
+

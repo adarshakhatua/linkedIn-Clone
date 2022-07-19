@@ -362,3 +362,201 @@ input:not(:focus)+label{
 #rightPeopleDivSliderBtn .notAllowed p{
     color: #b8b8b8;
 }
+#connectPeopleDiv{
+    /* border: 1px solid black; */
+}
+#connectPeopleDivContent{
+    /* border: 1px dotted red; */
+    height: 764px;
+    width: 1128px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.connectPeopleDivContentSigle{
+    /* border: 1px dashed blue; */
+    width: 548px;
+    height: 524px;
+    display: flex;
+    flex-direction: column;
+}
+.imgDiv{
+    height: 240px;
+    width: 300px;
+}
+.imgDiv img{
+    height: 100%;
+    width: 100%;
+}
+.connectPeopleDivContentSigle h3{
+    font-size: 48px;
+    font-weight: 200;
+    line-height: 60px;
+    text-align: left;
+    height: 120px;
+    width: 450px;
+}
+.connectPeopleDivContentSigle button{
+    height: 56px;
+    width: 270px;
+    padding: 12px 24px;
+    border-radius: 28px;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    border: 1px solid #2e2e2e;
+    color: #3e3e3e;
+    background-color: white;
+}
+.connectPeopleDivContentSigle button:hover{
+    background-color: #f5f5f5;
+}
+#chooseTopic{
+    border: 1px solid rgb(196, 196, 196);
+    height: 59px;
+    width: 360px;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+#chooseTopic h3{
+    font-size: 20px;
+    font-weight: 450;
+    line-height: 25px;
+    color: #4a4a4a;
+    /* border: 1px solid black; */
+    height: 25px;
+    width: 85%;
+    margin: 17px auto;
+    display: flex;
+    align-items: center;
+    padding: 0px 20px;
+    justify-content: space-between;
+}
+#optionDiv{
+    position: absolute;
+    left: 967px;
+    top: 3495px;
+    border: 1px solid rgb(196, 196, 196);
+    height: 380px;
+    width: 350px;
+    border-radius: 6px;
+    overflow-y: scroll;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+    padding-left: 15px;
+}
+.optionDropdown h4{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    text-align: left;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    color: #242424;
+}
+.optionDropdown h4:hover{
+    text-decoration: underline;
+}
+.optionDropdown p {
+    font-size: 16px;
+    line-height: 20px;
+    text-align: left;
+    padding-top: 0px;
+    margin-top: 0px;
+    color: #4a4a4a;
+}
+.optionDropdown p:hover {
+    text-decoration: underline;
+}
+
+
+#videoDiv{
+    /* border: 1px solid black; */
+    height: 840px;
+}
+#backGround{
+    /* border: 1px solid red; */
+    height: 720px;
+    width: 1200px;
+    position: absolute;
+    right: 0px;
+    z-index: -10;
+    background-color: #F4FAFF;
+}
+#VideoDivContent{
+    height: 840px;
+    width: 1128px;
+    margin: auto;
+    /* border: 1px dashed blue; */
+    display: flex;
+    align-items: center;
+}
+#video{
+    /* border: 1px dotted green; */
+    height: 720px;
+    width: 962px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+#player{
+    /* border: 1px solid black; */
+    height: 378px;
+    width: 500px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+#Text{
+    /* border: 1px solid black; */
+    height: 720px;
+    width: 462px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Text h3{
+    font-size: 40px;
+    line-height: 50px;
+    color: #B24020;
+    font-weight: 400;
+
+}
+#joinYourCollegeDiv{
+    /* border: 1px solid black; */
+    height: 840px;
+    background-image: url("https://static-exp2.licdn.com/sc/h/4ezbw852t2wrgf27zl1o1qtu7");
+}
+#joinYourCollegeDivContent{
+    height: 840px;
+    width: 1128px;
+    margin: auto;
+    /* border: 1px solid black; */
+    text-align: left;
+}
+#joinYourCollegeDivContent h1{
+    height: 140px;
+    width: 1128px;
+    /* border: 1px solid black; */
+    font-size: 56px;
+    font-weight: 200;
+    line-height: 70px;
+    align-content:left ;
+}
+#joinYourCollegeDivContent button{
+    height: 56px;
+    padding: 12px 24px;
+    border-radius: 28px;
+    background-color: #0A66C2;
+    border: #0A66C2;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    color: white;
+    cursor: pointer;
+    
+}
+#joinYourCollegeDivContent button:hover{
+    background-color: #004182;
+}
