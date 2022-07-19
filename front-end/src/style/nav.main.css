@@ -1,0 +1,79 @@
+#mainNav{
+    border: 1px solid black;
+    height: 53px;
+}
+#mainDivContent{
+    border: 1px solid red;
+    height: 53px;
+    width: 1128px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+#logoDiv{
+    height: 41px;
+    width: 41px;
+}
+#logoDiv img{
+    height: 100%;
+    width: 100%;
+}
+#searchDiv{
+    height: 34px;
+    width: 384px;
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+}
+#searchDiv input{
+    border: 1px solid transparent;
+    color: #666;
+    width: 280px;
+    height: 34px;
+    border-radius: 4px;
+    background-color: #EEF3F8;
+}
+#menuDiv{
+    display: flex;
+    /* border: 1px solid green; */
+    margin-left: 40px;
+}
+.menuItem{
+    height: 52px;
+    width: 80px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #666;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    /* border-bottom: 2px solid black; */
+}
+.menuItem:hover {
+    color: black;
+}
+.menuItem p{
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 1px solid black; */
+}
+.menuItem:first-child{
+    color: black;
+    border-bottom: 2px solid black;
+}
+.menuItem:last-child{
+    border-left: 1px solid rgb(230, 230, 230);
+}
+#premium{
+    font-size: 12px;
+    line-height: 18px;
+    color: #5D3b09;
+    width: 100px;
+}
+#premium:hover{
+    text-decoration: underline;
+}

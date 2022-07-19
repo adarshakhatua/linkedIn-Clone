@@ -14,7 +14,7 @@ label,input {
     transition: all 0.2s;
     touch-action: manipulation;
 }
-input {
+.field >input {
     font-size: 1em;
     border: 0;
     /* border: 1px solid #ccc; */
