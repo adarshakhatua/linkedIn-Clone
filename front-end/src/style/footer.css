@@ -22,9 +22,11 @@ footer {
     display: flex;
 }
 
-#footerLogoDiv img {
+#footerLogoDiv >p{
     height: 20px;
     cursor: pointer;
+    /* border: 1px solid black; */
+    width: 80px;
 }
 
 #FooterContentSingle {

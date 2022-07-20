@@ -26,17 +26,24 @@
     /* border: 1px solid black; */
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     width: 80px;
     height: 52px;
     color: rgb(111, 111, 111);
     cursor: pointer;
 }
-
-#NavGeneralSingle :hover {
+#NavGeneralSingleTitle{
+    /* border: 1px solid black; */
+    margin: 0px;
+}
+#NavGeneralSingle:hover{
     color: black;
 }
-
+#NavGeneralSingleImg p{
+    /* border: 1px solid black; */
+    margin: 0px;
+}
 #seperator {
     border-left: 1px solid rgb(177, 177, 177);
     height: 38px;

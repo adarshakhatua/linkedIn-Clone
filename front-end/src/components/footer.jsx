@@ -1,6 +1,6 @@
 import "../style/footer.css";
-import logo from "../files/navLogo.svg";
 import footerlogo from "../files/footerlogo.svg";
+import { LogoLInkedIn} from "../components/custom.icon";
 import { IoIosArrowDown } from "react-icons/io";
 
 const general = ["Sign Up", "Help Center", "About", "Press", "Blog", "Careers", "Developers"];
@@ -16,7 +16,8 @@ export const Footer = () => {
         <div id="footerLogo">
             <div id="footerContent">
                 <div id="footerLogoDiv">
-                    <img src={logo} alt="" />
+                    {/* <img src={logo} alt="" /> */}
+                    <p><LogoLInkedIn /></p>
                 </div>
                 <FooterContentSingle heading={"General"} data={general}></FooterContentSingle>
                 <FooterContentSingle heading={"Browse LinkedIn"} data={BrowseLinkedI}></FooterContentSingle>
