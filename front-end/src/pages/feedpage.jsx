@@ -2,6 +2,9 @@ import "../style/feedpage.css";
 import { TabTitle } from "../utils/generalFunction";
 import { UserFeed } from "../components/user.feed";
 import { DiscoverFeed } from "../components/discover.feed";
+import { CreatePostFeed } from "../components/createPost.feed";
+import { NewsFeed } from "../components/news.feed";
+import { AdFeed } from "../components/ad.feed";
 
 
 export const FeedPage = () => {
@@ -16,7 +19,7 @@ export const FeedPage = () => {
             </div>
 
             <div id="mainUserFeed">
-                <createPostFeed />
+                <CreatePostFeed />
                 <Contentfeed/>
             </div>
 
@@ -38,29 +41,7 @@ export const FeedPage = () => {
 
 
 
-const NewsFeed = () => {
-    return (
-        <div id="newsFeed">
 
-        </div>
-    )
-}
-
-const AdFeed = () => {
-    return (
-        <div id="AdFeed">
-
-        </div>
-    )
-}
-
-const CreatePostFeed = () => {
-    return (
-        <div id="createPostFeed">
-
-        </div>
-    )
-}
 
 const Contentfeed = () => {
     return (

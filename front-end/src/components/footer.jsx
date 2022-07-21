@@ -16,7 +16,6 @@ export const Footer = () => {
         <div id="footerLogo">
             <div id="footerContent">
                 <div id="footerLogoDiv">
-                    {/* <img src={logo} alt="" /> */}
                     <p><LogoLInkedIn /></p>
                 </div>
                 <FooterContentSingle heading={"General"} data={general}></FooterContentSingle>
@@ -30,7 +29,7 @@ export const Footer = () => {
             <img src={footerlogo} alt="" />
             <div className="singleFoolterTxtFirst">© 2022</div>
             {copyRightDiv.map((item) => {
-                return <div className="singleFoolterTxt">{ item}</div>
+                return <div className="singleFoolterTxt" key={item}>{ item}</div>
             })}
             <div className="singleFoolterTxtLast">language  <IoIosArrowDown /></div>
            
@@ -44,7 +43,7 @@ const FooterContentSingle = ({ heading, data }) => {
     return <div id="FooterContentSingle">
         <h4>{heading}</h4>
         {data.map((item) => {
-            return <p>{item}</p>
+            return <p key={item}>{item}</p>
         })}
     </div>
 }

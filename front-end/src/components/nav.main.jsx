@@ -45,7 +45,7 @@ export const NavMain = () => {
 const MenuItem = ({icon,text,icon2}) => {
     return (
         <div className="menuItem">
-            <p>{icon}</p>
+            <div>{icon}</div>
             <p>{text}{ icon2}</p>
         </div>
     )

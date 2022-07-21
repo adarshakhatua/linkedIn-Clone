@@ -1,0 +1,103 @@
+#newsFeed{
+    border: 1px solid #EBEBEB;
+    width: 315px;
+    min-height: 322px;
+    border-radius: 8px;
+    background-color: white;
+    padding: 12px;
+}
+#newsFeedHeading{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #262626;
+}
+#newsFeedHeading p{
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+}
+#newsFeedShowMore{
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 106px;
+    border-radius: 4px;
+    height: 24px;
+}
+#newsFeedShowMore:hover{
+    background-color: #EBEBEB;
+}
+#newsFeedShowMore{
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 2px 8px;
+}
+#unlist{
+    margin: 10px 0px 0px 0px;
+}
+.listItem{
+    /* border: 1px solid violet; */
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #262626;
+    height: 44px;
+}
+.listItem:hover{
+    background-color: #EBEBEB;
+}
+.listItemSub{
+    display: flex;
+    /* border: 1px solid black; */
+}
+.listItemSub p{
+    margin: 0px;
+    padding: 0px 2px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #6b6b6b;
+}
+#eyeButton{
+    cursor: pointer;
+}
+#eyePopUpDiv{
+    border: 1px solid #EBEBEB;
+    height: 60px;
+    width: 296px;
+    border-radius: 8px;
+    background-color: white;
+    padding: 8px 12px;
+    box-shadow: rgba(0,0,0,0.08)0px 0px 0px 1px,rgba(0,0,0,0.3) 0px 4px 4px 0px;
+    position: relative;
+    left: -30px;
+    top: -50px;
+    display: flex;
+    justify-content: space-between;
+}
+#eyePopUpDiv p{
+    height: 60px;
+    width: 272px;
+    /* border: 1px solid black; */
+    margin: 0px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.9);
+}
+#eyePopUpDiv p span{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #0A66C2;
+    cursor: pointer;
+}
+#eyePopUpDiv p span:hover{
+    text-decoration: underline;
+}

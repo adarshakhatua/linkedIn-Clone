@@ -160,3 +160,55 @@ export const option = [
     },
 
 ]
+export const news = [
+    {
+        heading: "Tech Mahindra to hire 1,000",
+        time: "9h",
+        count:"17,815",
+    },
+    {
+        heading: "Google freezes hiring for two weeks",
+        time: "18h",
+        count:"9,906",
+    },
+    {
+        heading: "Is hiring in IT slowing down?",
+        time: "3d",
+        count:"17,552",
+    },
+    {
+        heading: "Best countries for working abroad",
+        time: "3d",
+        count:"6,279",
+    },
+    {
+        heading: "India's mobile internet speed dips",
+        time: "1d",
+        count:"168",
+    },
+    {
+        heading: "Ola to invest $500 million in Bengaluru",
+        time: "2d",
+        count:"2,076",
+    },
+    {
+        heading: "India to be fastest growing ad market",
+        time: "2d",
+        count:"1,208",
+    },
+    {
+        heading: "Jump in salaries of FMCG CEOs",
+        time: "3d",
+        count:"722",
+    },
+    {
+        heading: "India Inc looking to travel green",
+        time: "3d",
+        count:"303",
+    },
+    {
+        heading: "Startups feel the financial pinch",
+        time: "3d",
+        count:"398",
+    }
+]

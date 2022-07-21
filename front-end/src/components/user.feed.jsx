@@ -1,6 +1,7 @@
 import "../style/user.feed.css"
 import { Premium } from "../components/custom.icon";
 import { ImBookmark } from "react-icons/im";
+import { ProfileImage } from "./profileImage";
 
 export const UserFeed = () => {
     return (
@@ -9,9 +10,9 @@ export const UserFeed = () => {
                 <div id="coverImage">
                     <img src="https://media-exp2.licdn.com/dms/image/C4D16AQGYf1HlDxsATQ/profile-displaybackgroundimage-shrink_200_800/0/1649082421104?e=1663804800&v=beta&t=FgBiF5gt7En83XkXTEZWoup7YIDky-xUdwKQDlYDHZU" alt="" />
                 </div>
-                <div id="profileImageDiv">
-                    <img src="https://media-exp2.licdn.com/dms/image/C4D03AQE732pYOz74lw/profile-displayphoto-shrink_100_100/0/1649706029434?e=1663804800&v=beta&t=QuJxqFe_hwWQtwemok7NeSjOANgS0YHYrXqqdnuHbdw" alt="" />
-                </div>
+
+                <ProfileImage image={"https://media-exp2.licdn.com/dms/image/C4D03AQE732pYOz74lw/profile-displayphoto-shrink_100_100/0/1649706029434?e=1663804800&v=beta&t=QuJxqFe_hwWQtwemok7NeSjOANgS0YHYrXqqdnuHbdw"} />
+                
                 <div id="userDetailsTxt">
                     <h3>Adarsha Khatua</h3>
                     <p>Aspiring Full Stack Web Developer, Learning MERN Stack at Masai School,Bengaluru,Karnataka</p>
@@ -39,3 +40,5 @@ export const UserFeed = () => {
         </div>
     )
 }
+
+

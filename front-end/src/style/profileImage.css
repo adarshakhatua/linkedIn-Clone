@@ -1,0 +1,12 @@
+#profileImageDiv {
+    height: 72px;
+    width: 72px;
+    border-radius: 50px;
+    border: 2px solid white;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+    margin: auto;
+    top: -36px;
+    cursor: pointer;
+}

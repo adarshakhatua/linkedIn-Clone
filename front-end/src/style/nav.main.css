@@ -4,6 +4,7 @@
     height: 53px;
     position: fixed;
     width: 100%;
+    background-color: white;
 }
 #mainDivContent{
     /* border: 1px solid red; */
@@ -70,7 +71,7 @@
 .menuItem:hover {
     color: black;
 }
-.menuItem p{
+.menuItem div{
     margin: 0px;
     display: flex;
     align-items: center;
@@ -87,7 +88,7 @@
 #premium{
     font-size: 12px;
     line-height: 18px;
-    color: #5D3b09;
+    color: #915907;
     width: 100px;
 }
 #premium:hover{
