@@ -1,9 +1,12 @@
+
 #mainNav{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 53px;
+    position: fixed;
+    width: 100%;
 }
 #mainDivContent{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     height: 53px;
     width: 1128px;
     margin: auto;
@@ -21,17 +24,30 @@
 #searchDiv{
     height: 34px;
     width: 384px;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     align-items: center;
 }
+#searchIcon{
+    position: relative;
+    left: 20px;
+    z-index: 2;
+    color: rgb(47, 47, 47);
+    font-size: 18px;
+}
 #searchDiv input{
+    position: relative;
     border: 1px solid transparent;
-    color: #666;
-    width: 280px;
+    width: 230px;
     height: 34px;
     border-radius: 4px;
+    padding: 0px 8px 0px 40px;
     background-color: #EEF3F8;
+    left: -14px;
+}
+#searchDiv input:focus{
+    width: 384px;
+    transition: 0.7s;
 }
 #menuDiv{
     display: flex;

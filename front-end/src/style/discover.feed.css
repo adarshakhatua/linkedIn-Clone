@@ -1,0 +1,48 @@
+#discoverFeed{
+    border: 1px solid #EBEBEB;
+    background-color: white;
+    width: 225px;
+    border-radius: 8px;
+
+}
+#discoverFeed1{
+    padding: 12px 12px 0px 12px;
+}
+#discoverFeed1 #addIcon{
+    border: 1px solid transparent;
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #242424;
+    cursor: pointer;
+}
+#discoverFeed1 #addIcon:hover{
+    background-color: #EBEBEB;
+    color: black;
+}
+#discoverFeed1 p{
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: #0A66A2;
+    text-align: left;
+    cursor: pointer;
+}
+#discoverFeed1 p:hover{
+    text-decoration: underline;
+}
+#Events{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#discoverFeed2{
+    border-top: 1px solid #EBEBEB;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
