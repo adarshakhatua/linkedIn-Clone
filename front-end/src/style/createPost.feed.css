@@ -13,20 +13,7 @@
     justify-content: space-evenly;
     align-items: center;
 }
-#createrImgDiv{
-    border: 2px solid white;
-    height: 48px;
-    width: 48px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    cursor: pointer;
-}
-#createrImgDiv img{
-    width: 100%;
-}
+
 #createrInputDiv{
     width: 426px;
     height: 48px;

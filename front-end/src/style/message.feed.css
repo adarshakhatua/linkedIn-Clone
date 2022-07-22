@@ -1,0 +1,74 @@
+#messagingFeed{
+    border: 1px solid #EBEBEB;
+    background-color: white;
+    width: 288px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    position: fixed;
+    z-index: 10;
+    right: 0px;
+    top: 100px;
+}
+#messagingFeedTop{
+    height: 47px;
+    border-bottom: 1px solid #EBEBEB;
+    display: flex;
+    cursor: pointer;
+}
+#messagingFeedTopLeft{
+    width: 176px;
+    display: flex;
+    padding: 0px 4px;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+#messagingFeedTopLeft p{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.9);
+    /* border: 1px solid black; */
+    margin-left: 10px;
+}
+#messagingFeedTopRight{
+    width: 110px;
+    /* border: 1px solid black; */
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#messagingFeedTopRight p{
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    height: 32px;
+    width: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(0, 0, 0, 0.6);
+}
+#messagingFeedTopRight p:last-child{
+   font-size: 28px;
+}
+#messagingFeedTopRight p:hover{
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+#messagingFeedBottom{
+    /* height: 739px; */
+    height: calc(84vh);
+}
+#searchMessageDiv{
+    border: 1px solid black;
+    display: flex;
+}
+#searchMessageDiv input{
+    width: 264px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #EEF3F8;
+    /* margin: 8px 12px;*/
+    padding: 0px 28px 2px 32px; 
+}

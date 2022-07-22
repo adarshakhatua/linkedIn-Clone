@@ -11,7 +11,9 @@ export const UserFeed = () => {
                     <img src="https://media-exp2.licdn.com/dms/image/C4D16AQGYf1HlDxsATQ/profile-displaybackgroundimage-shrink_200_800/0/1649082421104?e=1663804800&v=beta&t=FgBiF5gt7En83XkXTEZWoup7YIDky-xUdwKQDlYDHZU" alt="" />
                 </div>
 
-                <ProfileImage image={"https://media-exp2.licdn.com/dms/image/C4D03AQE732pYOz74lw/profile-displayphoto-shrink_100_100/0/1649706029434?e=1663804800&v=beta&t=QuJxqFe_hwWQtwemok7NeSjOANgS0YHYrXqqdnuHbdw"} />
+                <ProfileImage
+                    imageStyle={{top:"-36px"}}
+                    image={"https://media-exp2.licdn.com/dms/image/C4D03AQE732pYOz74lw/profile-displayphoto-shrink_100_100/0/1649706029434?e=1663804800&v=beta&t=QuJxqFe_hwWQtwemok7NeSjOANgS0YHYrXqqdnuHbdw"} />
                 
                 <div id="userDetailsTxt">
                     <h3>Adarsha Khatua</h3>

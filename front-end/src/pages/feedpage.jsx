@@ -5,6 +5,8 @@ import { DiscoverFeed } from "../components/discover.feed";
 import { CreatePostFeed } from "../components/createPost.feed";
 import { NewsFeed } from "../components/news.feed";
 import { AdFeed } from "../components/ad.feed";
+import { AboutFeed } from "../components/about.feed";
+import { MessagingFeed } from "../components/message.feed";
 
 
 export const FeedPage = () => {
@@ -25,7 +27,8 @@ export const FeedPage = () => {
 
             <div id="rightUserFeed">
                 <NewsFeed />
-                <AdFeed/>
+                <AdFeed />
+                <AboutFeed/>
             </div>
 
             <div id="messageFeed">
@@ -51,10 +54,3 @@ const Contentfeed = () => {
     )
 }
 
-const MessagingFeed = () => {
-    return (
-        <div id="messagingFeed">
-
-        </div>
-    )
-}

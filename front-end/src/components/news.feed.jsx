@@ -39,7 +39,7 @@ export const NewsFeed = () => {
         }
     }
     useEffect(() => {
-        document.body.addEventListener("click", (e) => { if ((e.target.id !== "unlist" && e.target.id !== "eyePopUpDiv" && e.target.id !== "") && popup) { setPopup(false); document.getElementById("unlist").setAttribute("style", "margin-top:10px"); } })
+        document.body.addEventListener("click", (e) => { if ((e.target.id !== "eyeButton" && e.target.id !== "eyePopUpDiv" && e.target.id !== "") && popup) { setPopup(false); document.getElementById("unlist").setAttribute("style", "margin-top:10px"); } })
     });
 
 

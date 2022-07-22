@@ -1,13 +1,16 @@
 import "../style/createPost.feed.css";
-import { Photo,Video,Event,Article } from "./custom.icon";
+import { Photo, Video, Event, Article } from "./custom.icon";
+import { ProfileImage } from "./profileImage";
 
 export const CreatePostFeed = () => {
     return (
         <div id="createPostFeed">
             <div id="createPostFeed1">
-                <div id="createrImgDiv">
-                    <img src="https://media-exp1.licdn.com/dms/image/C4D03AQE732pYOz74lw/profile-displayphoto-shrink_100_100/0/1649706029434?e=1663804800&v=beta&t=QuJxqFe_hwWQtwemok7NeSjOANgS0YHYrXqqdnuHbdw" alt="" />
-                </div>
+               
+                <ProfileImage
+                    image={"https://media-exp1.licdn.com/dms/image/C4D03AQE732pYOz74lw/profile-displayphoto-shrink_100_100/0/1649706029434?e=1663804800&v=beta&t=QuJxqFe_hwWQtwemok7NeSjOANgS0YHYrXqqdnuHbdw"}
+                    imageStyle={{ height: "48px", width: "48px", top: "0px" }}
+                />
                 <div id="createrInputDiv">Start a post about a topic that excites you</div>
             </div>
 
