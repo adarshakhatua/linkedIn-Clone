@@ -4,10 +4,18 @@
     width: 288px;
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+}
+.dropup {
     position: fixed;
     z-index: 10;
     right: 0px;
     top: 100px;
+}
+.dropdown {
+    position: fixed;
+    z-index: 10;
+    right: 0px;
+    bottom: 0px;
 }
 #messagingFeedTop{
     height: 47px;
@@ -61,14 +69,190 @@
     height: calc(84vh);
 }
 #searchMessageDiv{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
+    margin: 8px 10px;
 }
 #searchMessageDiv input{
     width: 264px;
     height: 32px;
     border-radius: 4px;
     background-color: #EEF3F8;
-    /* margin: 8px 12px;*/
-    padding: 0px 28px 2px 32px; 
+    margin: 0px -12px 0px -20px;
+    padding: 0px 28px 0px 32px;
+    border: 2px solid transparent; 
+}
+#searchMessageDiv input:hover{
+    border: 2px solid rgb(77, 77, 77);
+}
+#searchMessageDiv input:focus{
+    border: 3px solid rgb(77, 77, 77);
+}
+#initialSearchResult{
+    margin: 30px auto;
+}
+#initialSearchResult img{
+    height: 225px;
+    width: 225px;
+}
+#initialSearchResult p{
+    font-size: 14px;
+    line-height: 20px;
+    /* border: 1px solid black; */
+    margin: 20px 5px ;
+    color: rgba(0, 0, 0, 0.9);
+}
+.messageSingle{
+    /* border: 1px solid black; */
+    height: 66px;
+    width: 288px;
+    display: flex;
+    padding: 6px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 8px 10px;
+    cursor: pointer;
+}
+.messageSingle:hover{
+    background-color: #EBEBEB;
+}
+.messageSingleImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    /* border: 1px solid black; */
+    border-radius: 50%;
+    background-image: url("https://static-exp1.licdn.com/sc/h/1c5u578iilxfi4m4dvc4q810q");
+    background-size: cover;
+    background-origin: padding-box;
+}
+.messageSingleImage:hover{
+    background-color: #F3F2EF;
+    background-image: none;
+}
+.messageSingleImage .checkBox{
+    border: 1px solid rgb(12, 12, 12);
+    height: 24px;
+    width: 24px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.messageSingleImage .checkBox:hover{
+    border: 2px solid rgba(33, 33, 33, 0.9);
+}
+.messageSingleImage .checkedBox{
+    border: 1px solid rgb(5, 118, 66);
+    background-color: rgb(5, 118, 66);  
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    height: 24px;
+    width: 24px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+.messageSingleContent{
+    width: 232px;
+    /* border: 1px solid red; */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+}
+.messageSingleContent1{
+    /* border: 1px solid black; */
+    display: flex;
+    padding: 0px 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+.messageSingleContent1 p:first-child{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.9);
+    margin: 0px;
+}
+.messageSingleContent1 p:last-child {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.9);
+    margin: 0px;
+}
+.messageSingleContent2{
+    /* border: 1px solid black; */
+    display: flex;
+    padding: 0px 8px;
+    justify-content: space-between;
+    align-items: center;
+}
+.messageSingleContent2 p{
+    margin: 0px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+}
+.messageSingleContent2 p:last-child{
+    height: 16px;
+    width: 16px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background-color: #0A66C2;
+    color: white;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#selectMessageActionDiv{
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 288px;
+}
+#selectMessageActionDivLeft{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    /* border: 1px solid black; */
+}
+.selectMessageActionDivIcon{
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(52, 52, 52);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.selectMessageActionDivIcon:hover{
+    background-color: #EBEBEB;
+}
+#selectCount{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #666666;
+}
+#selectMessageActionDivRight{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -139,25 +139,27 @@ export const EyeButton = () => {
         </svg>
     )
 }
-export const Create = () => {
+export const Create = ({style}) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false" style={{}}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" class="mercado-match" width="16" height="16" focusable="false" style={style} id="createMessageIcon">
             <path d="M15 2.53a1.51 1.51 0 01-.44 1L9.15 9 6 10l1-3.12 5.44-5.44A1.5 1.5 0 0115 2.53zM12 11a1 1 0 01-1 1H5a1 1 0 01-1-1V5a1 1 0 011-1h3V2H5a3 3 0 00-3 3v6a3 3 0 003 3h6a3 3 0 003-3V8h-2z" style={{}}></path>
         </svg>
     )
 }
-export const Filter = () => {
+export const Filter = ({style}) => {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" width="16" height="16" focusable="false" style={{}}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" width="16" height="16" focusable="false" style={style}>
             <path d="M15 2v2H6.72a2 2 0 01-3.44 0H1V2h2.28a2 2 0 013.44 0H15zm-4 4a2 2 0 00-1.72 1H1v2h8.28a2 2 0 003.45 0H15V7h-2.28A2 2 0 0011 6zm-6 5a2 2 0 00-1.72 1H1v2h2.28a2 2 0 003.45 0H15v-2H6.72A2 2 0 005 11z" style={{}}></path>
         </svg>
     )
 }
-// export const Job = () => {
-//     return (
-        
-//     )
-// }
+export const Archive = ({style}) => {
+    return (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16" fill="currentColor" width="16" height="16" focusable="false" style={style}>
+            <path d="M15 3v10a1 1 0 01-1 1H2a1 1 0 01-1-1V3a1 1 0 011-1h3v2H3v1h2v1H3v6h10V6h-2V5h2V4h-2V2h3a1 1 0 011 1zM7 1v6H5l2.24 2.65a1 1 0 001.52 0L11 7H9V1H7z" style={style}></path>
+        </svg> 
+    )
+}
 // export const Job = () => {
 //     return (
         
