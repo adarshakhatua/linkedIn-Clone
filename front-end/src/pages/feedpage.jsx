@@ -7,6 +7,9 @@ import { NewsFeed } from "../components/news.feed";
 import { AdFeed } from "../components/ad.feed";
 import { AboutFeed } from "../components/about.feed";
 import { MessagingFeed } from "../components/message.feed";
+import { Contentfeed } from "../components/content.feed";
+
+
 import { useEffect } from "react";
 import { useState } from "react";
 import { RiArrowDownSFill } from "react-icons/ri";
@@ -16,15 +19,15 @@ export const FeedPage = () => {
 
     TabTitle("Feed | LinkedIn");
 
+    //To position discover feed and ad feed while scrolling starts here.....
     const [user, setUser] = useState(document.getElementById("userFeed"));
     const [news, setNews] = useState(document.getElementById("newsFeed"));
     //to update the user after initial loading
-
     useEffect(() => {
         setUser(document.getElementById("userFeed"));
         setNews(document.getElementById("newsFeed"))
     }, []);
-
+    
     let options = { root: null, rootMargin: "-74px 0px 0px 0px" };
     
     const observer = new IntersectionObserver((entries) => {
@@ -47,12 +50,11 @@ export const FeedPage = () => {
         });
     }, options)
 
-    
     useEffect(() => {
         if (user) { observer.observe(user) }
         if (news) { observer.observe(news) }
     },[user,news])
-
+    //To position discover feed and ad feed while scrolling ends here.....
     
     
     return (
@@ -84,21 +86,6 @@ export const FeedPage = () => {
             <div id="messageFeed">
                 <MessagingFeed/>
             </div>
-
-        </div>
-    )
-}
-
-
-
-
-
-
-
-
-const Contentfeed = () => {
-    return (
-        <div id="contentFeed">
 
         </div>
     )
