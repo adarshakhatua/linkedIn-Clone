@@ -3,7 +3,8 @@
     background-color: white;
     width: 225px;
     border-radius: 8px;
-
+    position: relative;
+    top: 0px;
 }
 #discoverFeed1{
     padding: 12px 12px 0px 12px;

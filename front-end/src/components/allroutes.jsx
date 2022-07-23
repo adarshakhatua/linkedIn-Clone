@@ -3,6 +3,7 @@ import { Navbar } from "./navbar";
 import { HomePage } from "../pages/homepage";
 import { FeedPage } from "../pages/feedpage";
 import { NavMain } from "../components/nav.main";
+import { Footer } from './footer';
 
 export const AllRoutes = () => {
     return <Routes>
@@ -12,6 +13,7 @@ export const AllRoutes = () => {
                 <>
                     <Navbar></Navbar>
                     <HomePage></HomePage>
+                    <Footer></Footer>
                 </>}
         ></Route>
 

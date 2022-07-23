@@ -13,6 +13,8 @@ import { useEffect } from "react";
 
 
 export const MessagingFeed = () => {
+
+    const [showSelectMessage, setShowSelectMessage] = useState(false);
     const [classChange,setClassChange]=useState("dropup")
     const [messageDrop, setMessageDrop] = useState(true);
     const handleMessageDrop = () => {
@@ -46,23 +48,23 @@ export const MessagingFeed = () => {
             {messageDrop && <div id="messagingFeedBottom">
 
                 <div id="searchMessageDiv">
-                    {/* <AiOutlineSearch style={{ position: "relative", left: "10px", top: "6px", fontSize: "24px", color:"rgba(0, 0, 0, 0.6)"}}/>
-                    <input type="text" placeholder="Search messages" />
-                    <Filter style={{ position: "relative", left: "-14px", top: "7px", height: "20px", width: "20px", color:"rgba(0, 0, 0, 0.6)",cursor:"pointer" }} /> */}
+                    {!showSelectMessage && <><AiOutlineSearch style={{ position: "relative", left: "10px", top: "6px", fontSize: "24px", color: "rgba(0, 0, 0, 0.6)" }} />
+                        <input type="text" placeholder="Search messages" />
+                        <Filter style={{ position: "relative", left: "-14px", top: "7px", height: "20px", width: "20px", color: "rgba(0, 0, 0, 0.6)", cursor: "pointer" }} /></>}
 
-                    <div id="selectMessageActionDiv">
+                    {showSelectMessage && <div id="selectMessageActionDiv">
                         <div id="selectMessageActionDivLeft">
-                            <div className="selectMessageActionDivIcon"><VscChromeClose /></div>
+                            <div className="selectMessageActionDivIcon" onClick={()=>{setShowSelectMessage(false)} }><VscChromeClose /></div>
                             <div id="selectCount">1 Selected</div>
                         </div>
 
                         <div id="selectMessageActionDivRight">
-                            <div className="selectMessageActionDivIcon"><HiOutlineMail/></div>
-                            <div className="selectMessageActionDivIcon"><FaTrashAlt/></div>
-                            <div className="selectMessageActionDivIcon"><Archive/></div>
+                            <div className="selectMessageActionDivIcon"><HiOutlineMail /></div>
+                            <div className="selectMessageActionDivIcon"><FaTrashAlt /></div>
+                            <div className="selectMessageActionDivIcon"><Archive /></div>
                         </div>
 
-                    </div>
+                    </div>}
 
                 </div>
 
