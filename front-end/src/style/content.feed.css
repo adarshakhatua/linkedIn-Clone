@@ -1,4 +1,4 @@
-#contentFeed{
+#contentFeed {
     width: 540px;
     margin: auto;
     padding: 8px 16px;
@@ -9,7 +9,8 @@
     display: flex;
     flex-direction: column;
 }
-#contentCreatorDiv{
+
+#contentCreatorDiv {
     border: 1px solid black;
     height: 64px;
     width: 540px;
@@ -17,25 +18,30 @@
     justify-content: space-between;
     cursor: pointer;
 }
-#contentCreatorDetailsDiv{
+
+#contentCreatorDetailsDiv {
     /* border: 1px dashed black; */
     height: 48px;
     align-self: center;
     display: flex;
 }
-#contentCreatorImageDiv{
+
+#contentCreatorImageDiv {
     /* border: 1px dotted red; */
     height: 48px;
     width: 48px;
 }
-#contentCreatorImageDiv img{
+
+#contentCreatorImageDiv img {
     height: 100%;
     width: 100%;
 }
-#contentCreatorDetails{
+
+#contentCreatorDetails {
     margin: 0px 0px 0px 10px;
 }
-#contentCreatorDetails h3{
+
+#contentCreatorDetails h3 {
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
@@ -44,11 +50,13 @@
     margin: 0px;
     text-align: left;
 }
-#contentCreatorDetails h3:hover{
+
+#contentCreatorDetails h3:hover {
     color: #0a66c2;
     text-decoration: underline;
 }
-#contentCreatorDetails p{
+
+#contentCreatorDetails p {
     font-size: 12px;
     line-height: 16px;
     color: rgb(0 0 0 / 60%);
@@ -56,7 +64,8 @@
     margin: 0px;
     text-align: left;
 }
-#contentFeedMoreButtton{
+
+#contentFeedMoreButtton {
     height: 32px;
     width: 32px;
     border-radius: 50%;
@@ -69,35 +78,42 @@
     color: #5E5E5E;
     left: 0px;
 }
-#contentFeedMoreButtton:hover{
+
+#contentFeedMoreButtton:hover {
     background-color: #EBEBEB;
 }
-#contentTextDiv{
+
+#contentTextDiv {
     max-height: 60px;
     width: 540px;
     /* border: 1px dashed blue; */
     font-size: 14px;
     line-height: 20px;
 }
-.contentTextOnly{
-    max-height: 100px;  
+
+.contentTextOnly {
+    max-height: 100px;
 }
-.hashTag{
+
+.hashTag {
     font-size: 14px;
     font-weight: 600;
     line-height: 20px;
     color: #0a66c2;
 }
-.hashTag:hover{
+
+.hashTag:hover {
     text-decoration: underline;
 }
-#contentFeedEngageDiv{
+
+#contentFeedEngageDiv {
     border-top: 1px solid #EBEBEB;
     display: flex;
     justify-content: space-between;
     padding: 6px 0px;
 }
-#contentFeedEngageDiv button{
+
+#contentFeedEngageDiv button {
     display: flex;
     height: 48px;
     width: 113px;
@@ -110,16 +126,20 @@
     background-color: white;
     margin: 0px;
 }
-#contentFeedEngageDiv button:hover{
+
+#contentFeedEngageDiv button:hover {
     background-color: #EBEBEB;
 }
-#contentFeedEngageDiv button span{
+
+#contentFeedEngageDiv button span {
     margin: 5px;
 }
-#contentFeedEngageDiv button:first-child{
+
+#contentFeedEngageDiv button:first-child {
     position: relative;
 }
-#reactionPop{
+
+#reactionPop {
     height: 50px;
     width: 290px;
     border: 1px solid #EBEBEB;
@@ -131,38 +151,104 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px,rgba(0, 0, 0, 0.3) 0px 4px 4px 0px;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.3) 0px 4px 4px 0px;
 }
-#reactionPop img{
+
+#reactionPop img {
     height: 36px;
     width: 36px;
+    /* border: 1px solid red; */
 }
-#reactionPop:hover img{
-    animation: bouncy 0.33s cubic-bezier(0, 0, 1, 1) 1;
+#reactionPop div{
+    height: 42px;
+    width: 42px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    position: relative;
+}
+
+#reactionPop div {    
+    animation: bouncy 0.37s cubic-bezier(0, 0, 1, 1) 1;
     transition: transform .1s;
 }
-@keyframes bouncy{
-    0%{transform: translateY(0px);height: 36px;}
-    10%{transform: translateY(2px);height: 34px}
-    20%{transform: translateY(4px);height: 30px}
-    30%{transform: translateY(0px);height: 32px}
-    50%{transform: translateY(-10px);height: 34px;}
-    100%{transform: translateY(0px);height: 36px;}
+#reactionPop:hover img{
+    height: 34px;
+    width: 34px;
 }
-#reactionPop:hover img:nth-child(1){
+@keyframes bouncy {
+    0% {
+        transform: translateY(0px);
+        height: 36px;
+    }
+    10% {
+        transform: translateY(2px);
+        height: 34px
+    }
+    20% {
+        transform: translateY(4px);
+        height: 30px
+    }
+    30% {
+        transform: translateY(0px);
+        height: 32px
+    }
+    50% {
+        transform: translateY(-10px);
+        height: 34px;
+    }
+    100% {
+        transform: translateY(0px);
+        height: 36px;
+    }
+}
+
+#reactionPop div:nth-child(1) {
     animation-delay: 0s;
 }
- #reactionPop:hover img:nth-child(2) {
+
+#reactionPop div:nth-child(2) {
     animation-delay: 0.03s;
 }
 
-#reactionPop:hover img:nth-child(3) {
+#reactionPop div:nth-child(3) {
     animation-delay: 0.06s;
 }
-#reactionPop:hover img:nth-child(4) {
+
+#reactionPop div:nth-child(4) {
     animation-delay: 0.09s;
-}#reactionPop:hover img:nth-child(5) {
+}
+
+#reactionPop div:nth-child(5) {
     animation-delay: 0.12s;
-}#reactionPop:hover img:nth-child(6) {
+}
+
+#reactionPop div:nth-child(6) {
     animation-delay: 0.15s;
+}
+#reactionPop div:hover img{
+    position: absolute;
+    animation-name: smooth_movement;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+#reactionPop div:hover p{
+    position: absolute;
+    animation-name: smooth_movement_txt;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+@keyframes smooth_movement{
+    0% {top:0px; left:0px; height: 34px; width: 34px;}
+    100%{top: -16px; left: -7px; height: 48px; width: 48px;}
+}
+@keyframes smooth_movement_txt{
+    0% {top:-58px;left: -14px; opacity: 0;}
+    100%{top: -58px;left: -14px; opacity: 1;}
+}
+.ReactionPopTextDiv{
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    border-radius: 18px;
+    padding: 1px 10px;
 }

@@ -2,6 +2,7 @@ import "../style/content.feed.css";
 
 import { BsThreeDots } from "react-icons/bs";
 import { Earth,Like,Comment,Share,Send } from "./custom.icon";
+import { useState } from "react";
 
 // https://static-exp1.licdn.com/sc/h/f4ly07ldn7194ciimghrumv3l
 // https://static-exp1.licdn.com/sc/h/3c4dl0u9dy2zjlon6tf5jxlqo
@@ -19,6 +20,17 @@ import { Earth,Like,Comment,Share,Send } from "./custom.icon";
 // https://static-exp1.licdn.com/sc/h/6gz02r6oxefigck4ye888wosd
 // https://static-exp1.licdn.com/sc/h/4rw9bhaoyh1622ce65fshynuw
 export const Contentfeed = () => {
+
+    const [reaction, setReaction] = useState(false);
+    let id;
+    const handleReaction = (state) => {
+         if (id) { clearTimeout(id) }
+        
+           id= setTimeout(() => { setReaction(state); }, 500); 
+        
+        
+    }
+
     return (
         <div id="contentFeed">
 
@@ -63,18 +75,18 @@ export const Contentfeed = () => {
 
                 <div id="contentFeedEngageDiv">
 
-                    <button>
+                    <button onMouseEnter={() => { handleReaction(true) }} onMouseLeave={() => { handleReaction(false)}}>
                         <Like />
                         <span>Like</span>
-                        <span id="reactionPop">
-                            <img classname="animate bounce" src="https://static-exp1.licdn.com/sc/h/f4ly07ldn7194ciimghrumv3l" alt="" />
-                            <img classname="animate bounce" src="https://static-exp1.licdn.com/sc/h/3c4dl0u9dy2zjlon6tf5jxlqo" alt="" />
-                            <img classname="animate bounce" src="https://static-exp1.licdn.com/sc/h/9whrgl1hq2kfxjqr9gqwoqrdi" alt="" />
-                            <img classname="animate bounce" src="https://static-exp1.licdn.com/sc/h/ktcgulanbxpl0foz1uckibdl" alt="" />
-                            <img classname="animate bounce" src="https://static-exp1.licdn.com/sc/h/asmf650x603bcwgefb4heo6bm" alt="" />
-                            <img classname="animate bounce" src="https://static-exp1.licdn.com/sc/h/39axkb4qe8q95ieljrhqhkxvl" alt="" />
-                            <img classname="animate bounce" src="https://static-exp1.licdn.com/sc/h/1z80ze8ler6arc76a8rxsgqbh" alt="" />
-                        </span>
+                        {reaction && <span id="reactionPop">
+                            <Reaction image={"https://static-exp1.licdn.com/sc/h/f4ly07ldn7194ciimghrumv3l"} text={"Like"} />
+                            <Reaction image={"https://static-exp1.licdn.com/sc/h/3c4dl0u9dy2zjlon6tf5jxlqo"} text={"Celebrate"} />
+                            <Reaction image={"https://static-exp1.licdn.com/sc/h/9whrgl1hq2kfxjqr9gqwoqrdi"} text={"Support"} />
+                            <Reaction image={"https://static-exp1.licdn.com/sc/h/ktcgulanbxpl0foz1uckibdl"} text={"Funny"} />
+                            <Reaction image={"https://static-exp1.licdn.com/sc/h/asmf650x603bcwgefb4heo6bm"} text={"Love"} />
+                            <Reaction image={"https://static-exp1.licdn.com/sc/h/39axkb4qe8q95ieljrhqhkxvl"} text={"Insightful"} />
+                            <Reaction image={"https://static-exp1.licdn.com/sc/h/1z80ze8ler6arc76a8rxsgqbh"} text={"Curious"} />
+                        </span>}
                     </button>
 
                     <button>
@@ -96,6 +108,23 @@ export const Contentfeed = () => {
 
             </div>
 
+        </div>
+    )
+}
+
+
+const Reaction = ({ image, text }) => {
+
+    const [txt, setTxt] = useState(false);
+
+    const handleText = (state) => {
+        setTxt(state)
+    }
+
+    return (
+        <div onMouseEnter={() => {handleText(true)}} onMouseLeave={()=>{handleText(false)}} >
+            <img classname="animate bounce" src={image} alt="" />
+            {txt && <p className="ReactionPopTextDiv">{text}</p>}
         </div>
     )
 }
