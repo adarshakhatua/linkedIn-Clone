@@ -1,8 +1,11 @@
 import "../style/content.feed.css";
 
 import { BsThreeDots } from "react-icons/bs";
-import { Earth,Like,Comment,Share,Send } from "./custom.icon";
-import { useState } from "react";
+import { Earth,Like,Comment,Share,Send,Photo,Imogi } from "./custom.icon";
+import { ProfileImage } from "./profileImage";
+import { MdArrowDropDown } from "react-icons/md";
+import { LikeButton } from "./reactionButton";
+
 
 // https://static-exp1.licdn.com/sc/h/f4ly07ldn7194ciimghrumv3l
 // https://static-exp1.licdn.com/sc/h/3c4dl0u9dy2zjlon6tf5jxlqo
@@ -21,15 +24,7 @@ import { useState } from "react";
 // https://static-exp1.licdn.com/sc/h/4rw9bhaoyh1622ce65fshynuw
 export const Contentfeed = () => {
 
-    const [reaction, setReaction] = useState(false);
-    let id;
-    const handleReaction = (state) => {
-         if (id) { clearTimeout(id) }
-        
-           id= setTimeout(() => { setReaction(state); }, 500); 
-        
-        
-    }
+   
 
     return (
         <div id="contentFeed">
@@ -63,41 +58,34 @@ export const Contentfeed = () => {
 
                 <div id="contentFeedStat">
                     <div id="contentFeedStatLeft">
-                        <span></span>
+                        <div>
+                            <img src="https://static-exp1.licdn.com/sc/h/2uxqgankkcxm505qn812vqyss" alt="" />
+                            <img src="https://static-exp1.licdn.com/sc/h/cm8d2ytayynyhw5ieaare0tl3" alt="" />
+                            <img src="https://static-exp1.licdn.com/sc/h/f58e354mjsjpdd67eq51cuh49" alt="" />
+                        </div>
                         <span>692</span>
                     </div>
 
                     <div id="contentFeedStatRight">
-                        <span>41 comments</span>
+                        <span>41 comments</span>• 
                         <span>1 share</span>
                     </div>
                 </div>
 
                 <div id="contentFeedEngageDiv">
-
-                    <button onMouseEnter={() => { handleReaction(true) }} onMouseLeave={() => { handleReaction(false)}}>
-                        <Like />
-                        <span>Like</span>
-                        {reaction && <span id="reactionPop">
-                            <Reaction image={"https://static-exp1.licdn.com/sc/h/f4ly07ldn7194ciimghrumv3l"} text={"Like"} />
-                            <Reaction image={"https://static-exp1.licdn.com/sc/h/3c4dl0u9dy2zjlon6tf5jxlqo"} text={"Celebrate"} />
-                            <Reaction image={"https://static-exp1.licdn.com/sc/h/9whrgl1hq2kfxjqr9gqwoqrdi"} text={"Support"} />
-                            <Reaction image={"https://static-exp1.licdn.com/sc/h/ktcgulanbxpl0foz1uckibdl"} text={"Funny"} />
-                            <Reaction image={"https://static-exp1.licdn.com/sc/h/asmf650x603bcwgefb4heo6bm"} text={"Love"} />
-                            <Reaction image={"https://static-exp1.licdn.com/sc/h/39axkb4qe8q95ieljrhqhkxvl"} text={"Insightful"} />
-                            <Reaction image={"https://static-exp1.licdn.com/sc/h/1z80ze8ler6arc76a8rxsgqbh"} text={"Curious"} />
-                        </span>}
-                    </button>
-
+                    <LikeButton icon={<Like />} buttonName={"Like"} />
                     <button>
                         <Comment />
                         <span>Comment</span>
                     </button>
 
-                    <button>
-                        <Share />
-                        <span>Share</span>
-                    </button>
+                    <div id="shareDiv">
+                        <button>
+                            <Share />
+                            <span>Share</span>
+                        </button>
+                        <div id="sharePop"></div>
+                    </div>
 
                     <button>
                         <Send />
@@ -108,23 +96,81 @@ export const Contentfeed = () => {
 
             </div>
 
+            <div id="contentFeedComment">
+
+                <div id="postCommentDiv">
+                    <ProfileImage imageStyle={{height:"40px",width:"40px"}}/>
+                    <input type="text" placeholder="Add a comment..." />
+                    <span>
+                        <span><Imogi style={{ color: "rgb(0 0 0 / 60%)" }} /></span>
+                        <span><Photo style={{ color: "rgb(0 0 0 / 60%)" }} /></span>
+                    </span> 
+                </div>
+
+                <div id="commentSortDiv">
+                    <div>Most relevant <MdArrowDropDown style={{fontSize:"20px"}}/></div>
+                </div>
+
+                <div id="Comment">
+
+                    <div id="CommentOwnerImg">
+                        <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHe0PzWD9sQpg/profile-displayphoto-shrink_100_100/0/1657731060961?e=1664409600&v=beta&t=9UyPihlhfPxxEH8IjArwMeqDhIfc3L8ViUuRAPIhPVQ" alt="" />
+                    </div>
+
+                    <div id="CommentContent">
+
+                        <div id="CommentOwnerDetails">
+                            <div id="CommentOwnerDetailsTop">
+                                <p><span>Alireza Bahrami</span> • <span>3rd+</span></p>
+                                <p>1d <span ><BsThreeDots style={{fontSize:"16px"}}/></span></p>
+                            </div>
+                            <p id="Ownerdescription">Django backend developer</p>
+                        </div>
+
+                        <div id="commentTxt">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit neque commodi placeat velit? Fugiat quas sequi eligendi, animi minus magnam praesentium reprehenderit natus, inventore id quasi nostrum a? Incidunt, recusandae.
+                        </div>
+
+                        <div className="InteractionDiv">
+                            <div id="LikeDiv"><LikeButton buttonName={"Like"} /></div>
+                            <div id="commentDiv">Reply</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Reply">
+                        
+                        <div id="CommentOwnerImg">
+                            <img src="https://media-exp1.licdn.com/dms/image/C4E03AQHe0PzWD9sQpg/profile-displayphoto-shrink_100_100/0/1657731060961?e=1664409600&v=beta&t=9UyPihlhfPxxEH8IjArwMeqDhIfc3L8ViUuRAPIhPVQ" alt="" />
+                        </div>
+
+                        <div id="ReplyContent">
+
+                            <div id="ReplyOwnerDetails">
+                                <div id="ReplyOwnerDetailsTop">
+                                    <p><span>Alireza Bahrami</span> • <span>3rd+</span></p>
+                                    <p>1d <span ><BsThreeDots style={{ fontSize: "16px" }} /></span></p>
+                                </div>
+                                <p id="Ownerdescription">Django backend developer</p>
+                            </div>
+
+                            <div id="ReplyTxt">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit neque commodi placeat velit? Fugiat quas sequi eligendi, animi minus magnam praesentium reprehenderit natus, inventore id quasi nostrum a? Incidunt, recusandae.
+                            </div>
+                            
+                            <div className="InteractionDiv">
+                            <div id="LikeDiv"><LikeButton buttonName={"Like"} /></div>
+                                <div id="commentDiv">Reply</div>
+                            </div>
+                        </div>
+                        
+                        
+                </div>
+
+            </div>
+
         </div>
     )
 }
 
 
-const Reaction = ({ image, text }) => {
-
-    const [txt, setTxt] = useState(false);
-
-    const handleText = (state) => {
-        setTxt(state)
-    }
-
-    return (
-        <div onMouseEnter={() => {handleText(true)}} onMouseLeave={()=>{handleText(false)}} >
-            <img classname="animate bounce" src={image} alt="" />
-            {txt && <p className="ReactionPopTextDiv">{text}</p>}
-        </div>
-    )
-}

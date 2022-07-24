@@ -2,7 +2,7 @@
     width: 540px;
     margin: auto;
     padding: 8px 16px;
-    height: 500px;
+    /* height: 500px; */
     border: 1px solid #EBEBEB;
     background-color: white;
     border-radius: 8px;
@@ -11,7 +11,7 @@
 }
 
 #contentCreatorDiv {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     height: 64px;
     width: 540px;
     display: flex;
@@ -105,7 +105,64 @@
 .hashTag:hover {
     text-decoration: underline;
 }
-
+#contentFeedStat{
+    /* border: 1px solid black; */
+    padding: 8px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#contentFeedStatLeft{
+    height: 16px;
+    /* border: 1px solid black; */
+    width: 200px;
+    display: flex;
+}
+#contentFeedStatLeft div{
+    position: relative;
+    /* border: 1px solid red; */
+    display: flex;
+    width: 48px;
+    padding: 0px 4px 0px 0px;
+}
+#contentFeedStatLeft div img{
+    height: 16px;
+    width: 16px;
+    position: absolute;
+}
+#contentFeedStatLeft div img:nth-child(2){
+    left: 12px;
+}
+#contentFeedStatLeft div img:nth-child(3) {
+    left: 24px;
+}
+#contentFeedStatLeft span{
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(0 0 0 / 60%);
+}
+#contentFeedStatLeft span:hover {
+    text-decoration: underline;
+    color: #0a66c2;
+}
+#contentFeedStatRight{
+    /* border: 1px solid black; */
+    width: 120px;
+    line-height: 16px;
+    color: rgb(0 0 0 / 60%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#contentFeedStatRight span{
+    font-size: 12px;
+    line-height: 16px;
+    color: rgb(0 0 0 / 60%);
+}
+#contentFeedStatRight span:hover{
+    text-decoration: underline;
+    color: #0a66c2;
+}
 #contentFeedEngageDiv {
     border-top: 1px solid #EBEBEB;
     display: flex;
@@ -138,117 +195,280 @@
 #contentFeedEngageDiv button:first-child {
     position: relative;
 }
-
-#reactionPop {
-    height: 50px;
-    width: 290px;
-    border: 1px solid #EBEBEB;
-    background-color: white;
-    border-radius: 8px;
+#postCommentDiv{
+    /* border: 1px dashed green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 61px;
+    width: 540px;
+    position: relative;
+}
+#postCommentDiv >span{
     position: absolute;
-    left: -40px;
-    top: -70px;
+    display: flex;
+    justify-content: space-between;
+    right: 7px;
+    /* border: 1px solid black; */
+}
+#postCommentDiv>span span{
+    /* border: 1px solid red; */
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.3) 0px 4px 4px 0px;
+    justify-content: center;
+}
+#postCommentDiv>span span:hover{
+    background-color: #EBEBEB;
+}
+#postCommentDiv input{
+    width: 464px;
+    min-height: 40px;
+    padding: 0px 10px;
+    border-radius: 30px;
+    border: 1px solid #A9A7A7;
+    font-size: 14px;
+    line-height: 21px;
+    color: rgb(0 0 0 / 90%);
+}
+#postCommentDiv input:focus{
+    outline: 1px solid #A9A7A7;
+}
+#commentSortDiv{
+    /* border: 1px dashed black; */
+    height: 24px;
+    width: 520px;
+    display: flex;
+    align-items: center;
+ 
+}
+#commentSortDiv div{
+    width: 104px;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    font-size: 13.33px;
+    font-weight: 600;
+    color: rgb(0 0 0 / 60%);
+}
+#Comment{
+    /* border: 1px dotted red; */
+    display: flex;
+    justify-content: space-between;
+}
+#CommentOwnerImg{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+#CommentOwnerImg img{
+    height: 100%;
+    width: 100%;
+}
+#CommentContent{
+    width: 490px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    /* border: 1px solid rgb(255, 0, 157); */
+    background-color: #f2f2f2;
+}
+#CommentOwnerDetails{
+    /* border: 1px solid black; */
+    height: 53px;
+    padding: 8px 64px 8px 12px;
+}
+#CommentOwnerDetailsTop{
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
+    position: relative;
+}
+#CommentOwnerDetailsTop p{
+    margin: 0px;
+    /* border: 1px solid black; */
+ 
+}
+#CommentOwnerDetailsTop p:last-child{
+    position: absolute;
+    right: -55px;
+    color: rgb(0 0 0 / 60%);
+    font-size: 12px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    width: 35px;
+
 }
 
-#reactionPop img {
-    height: 36px;
-    width: 36px;
-    /* border: 1px solid red; */
+#CommentOwnerDetailsTop p span:first-child{
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    color: rgb(0 0 0 / 90%);
 }
-#reactionPop div{
-    height: 42px;
-    width: 42px;
-    box-sizing: border-box;
+#CommentOwnerDetailsTop p span:last-child{
+    color: rgb(0 0 0 / 60%);
+    font-size: 14px;
+    font-weight: 400;
+}
+#CommentOwnerDetailsTop p:first-child span:first-child:hover{
+    color: #0a66c2;
+    text-decoration: underline;
+}
+#CommentOwnerDetailsTop p span:hover {
+    text-decoration: none;
+}
+#Ownerdescription{
+    color: rgb(0 0 0 / 60%);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
     /* border: 1px solid black; */
+    text-align: left;
+    margin: 0px;
+}
+#commentTxt{
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    text-align: left;
+    width: 464px;
+    padding: 0px 16px 12px 12px;
+    color: rgb(25 25 25);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#Reply{
+    display: flex;
+    justify-content: flex-end;
+    /* border: 1px solid black; */
+}
+#ReplyContent {
+    width: 420px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+    /* border: 1px solid rgb(255, 0, 157); */
+    margin: 0px 0px 0px 10px;
+    background-color: #f2f2f2;
+}
+#ReplyOwnerDetails {
+    /* border: 1px solid black; */
+    height: 53px;
+    padding: 8px 64px 8px 12px;
+}
+
+#ReplyOwnerDetailsTop {
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid red; */
     position: relative;
 }
 
-#reactionPop div {    
-    animation: bouncy 0.37s cubic-bezier(0, 0, 1, 1) 1;
-    transition: transform .1s;
-}
-#reactionPop:hover img{
-    height: 34px;
-    width: 34px;
-}
-@keyframes bouncy {
-    0% {
-        transform: translateY(0px);
-        height: 36px;
-    }
-    10% {
-        transform: translateY(2px);
-        height: 34px
-    }
-    20% {
-        transform: translateY(4px);
-        height: 30px
-    }
-    30% {
-        transform: translateY(0px);
-        height: 32px
-    }
-    50% {
-        transform: translateY(-10px);
-        height: 34px;
-    }
-    100% {
-        transform: translateY(0px);
-        height: 36px;
-    }
+#ReplyOwnerDetailsTop p {
+    margin: 0px;
+    /* border: 1px solid black; */
+
 }
 
-#reactionPop div:nth-child(1) {
-    animation-delay: 0s;
-}
-
-#reactionPop div:nth-child(2) {
-    animation-delay: 0.03s;
-}
-
-#reactionPop div:nth-child(3) {
-    animation-delay: 0.06s;
-}
-
-#reactionPop div:nth-child(4) {
-    animation-delay: 0.09s;
-}
-
-#reactionPop div:nth-child(5) {
-    animation-delay: 0.12s;
-}
-
-#reactionPop div:nth-child(6) {
-    animation-delay: 0.15s;
-}
-#reactionPop div:hover img{
+#ReplyOwnerDetailsTop p:last-child {
     position: absolute;
-    animation-name: smooth_movement;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-}
-#reactionPop div:hover p{
-    position: absolute;
-    animation-name: smooth_movement_txt;
-    animation-duration: 0.3s;
-    animation-fill-mode: forwards;
-}
-@keyframes smooth_movement{
-    0% {top:0px; left:0px; height: 34px; width: 34px;}
-    100%{top: -16px; left: -7px; height: 48px; width: 48px;}
-}
-@keyframes smooth_movement_txt{
-    0% {top:-58px;left: -14px; opacity: 0;}
-    100%{top: -58px;left: -14px; opacity: 1;}
-}
-.ReactionPopTextDiv{
-    background-color: black;
-    color: white;
+    right: -55px;
+    color: rgb(0 0 0 / 60%);
     font-size: 12px;
-    border-radius: 18px;
-    padding: 1px 10px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    width: 35px;
+
+}
+
+#ReplyOwnerDetailsTop p span:first-child {
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 21px;
+    color: rgb(0 0 0 / 90%);
+}
+
+#ReplyOwnerDetailsTop p span:last-child {
+    color: rgb(0 0 0 / 60%);
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#ReplyOwnerDetailsTop p:first-child span:first-child:hover {
+    color: #0a66c2;
+    text-decoration: underline;
+}
+
+#ReplyOwnerDetailsTop p span:hover {
+    text-decoration: none;
+}
+
+#Ownerdescription {
+    color: rgb(0 0 0 / 60%);
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    /* border: 1px solid black; */
+    text-align: left;
+    margin: 0px;
+}
+
+#ReplyTxt {
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    text-align: left;
+    width: 392px;
+    padding: 0px 16px 12px 12px;
+    color: rgb(25 25 25);
+    font-size: 14px;
+    font-weight: 400;
+}
+.InteractionDiv{
+    border: 1px solid green;
+    height: 16px;
+    display: flex;
+    font-size: 12px;
+    font-weight: 600;
+    color: rgb(0 0 0 / 60%);
+}
+#LikeDiv{
+    /* border: 1px solid blue; */
+    padding: 0px 8px;
+    box-sizing: border-box;
+    border-right: 1px solid rgba(75, 75, 75, 0.6);
+    position: relative;
+    min-width: 30px;
+}
+#LikeDiv div#LikeButton button{
+    width: 25px;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    /* border: 1px solid black; */
+    box-sizing: border-box;
+    top: -4px;
+    left: -8px;
+}
+#commentDiv {
+    /* border: 1px solid blue; */
+    padding: 0px 8px;
+}
+#shareDiv{
+    position: relative;
+}
+#sharePop{
+    right: 0px;
+    top: 40px;
+    position: absolute;
+    z-index: 1;
+    height: 111px;
+    width: 352px;
+    border: 1px solid #EBEBEB;
+    background-color: white;
+    border-radius: 8px;
+    
 }

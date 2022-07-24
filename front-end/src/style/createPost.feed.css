@@ -70,3 +70,7 @@
 #createPostWriteArticleDiv{
     color: #E16745;
 }
+
+#LikeButton{
+    position: relative;
+}

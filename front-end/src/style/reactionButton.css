@@ -1,0 +1,160 @@
+button#LikeButton{
+    border: 1px solid black;
+    /* position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+#reactionPop {
+    height: 50px;
+    width: 290px;
+    border: 1px solid #EBEBEB;
+    background-color: white;
+    border-radius: 8px;
+    position: absolute;
+    left: -40px;
+    top: -70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 0px 1px, rgba(0, 0, 0, 0.3) 0px 4px 4px 0px;
+}
+
+#reactionPop img {
+    height: 36px;
+    width: 36px;
+    /* border: 1px solid red; */
+}
+
+#reactionPop div {
+    height: 42px;
+    width: 42px;
+    box-sizing: border-box;
+    /* border: 1px solid black; */
+    position: relative;
+}
+
+#reactionPop div {
+    animation: bouncy 0.37s cubic-bezier(0, 0, 1, 1) 1;
+
+}
+
+@keyframes bouncy {
+    0% {
+        transform: translateY(0px);
+        height: 36px;
+    }
+
+    10% {
+        transform: translateY(2px);
+        height: 34px
+    }
+
+    20% {
+        transform: translateY(4px);
+        height: 30px
+    }
+
+    30% {
+        transform: translateY(0px);
+        height: 32px
+    }
+
+    50% {
+        transform: translateY(-10px);
+        height: 34px;
+    }
+
+    100% {
+        transform: translateY(0px);
+        height: 36px;
+    }
+}
+
+#reactionPop div:nth-child(1) {
+    animation-delay: 0s;
+}
+
+#reactionPop div:nth-child(2) {
+    animation-delay: 0.03s;
+}
+
+#reactionPop div:nth-child(3) {
+    animation-delay: 0.06s;
+}
+
+#reactionPop div:nth-child(4) {
+    animation-delay: 0.09s;
+}
+
+#reactionPop div:nth-child(5) {
+    animation-delay: 0.12s;
+}
+
+#reactionPop div:nth-child(6) {
+    animation-delay: 0.15s;
+}
+
+#reactionPop div:hover img {
+    position: absolute;
+    animation-name: smooth_movement;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+.smoothRevert {
+    position: absolute;
+    animation-name: smooth_movement_revert;
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+}
+
+#reactionPop div p {
+    position: absolute;
+    top: -58px;
+    display: none;
+}
+
+#reactionPop div:hover p {
+    display: block;
+}
+
+@keyframes smooth_movement {
+    0% {
+        top: 0px;
+        left: 0px;
+        height: 36px;
+        width: 36px;
+    }
+
+    100% {
+        top: -16px;
+        left: -8px;
+        height: 48px;
+        width: 48px;
+    }
+}
+
+@keyframes smooth_movement_revert {
+    0% {
+        top: -16px;
+        left: -7px;
+        height: 48px;
+        width: 48px;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        height: 36px;
+        width: 36px;
+    }
+}
+
+.ReactionPopTextDiv {
+    background-color: black;
+    color: white;
+    font-size: 12px;
+    border-radius: 18px;
+    padding: 1px 10px;
+}
