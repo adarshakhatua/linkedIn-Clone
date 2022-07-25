@@ -4,6 +4,7 @@ import { HomePage } from "../pages/homepage";
 import { FeedPage } from "../pages/feedpage";
 import { NavMain } from "../components/nav.main";
 import { Footer } from './footer';
+import { LoadingScreen } from "../components/loading.screen";
 
 export const AllRoutes = () => {
     return <Routes>
@@ -23,6 +24,11 @@ export const AllRoutes = () => {
                 <NavMain></NavMain>
                 <FeedPage></FeedPage>
             </>}
+        ></Route>
+
+        <Route
+            path="/loading"
+            element={<LoadingScreen></LoadingScreen>}
         ></Route>
 
     </Routes>

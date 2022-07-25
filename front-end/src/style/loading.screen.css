@@ -1,0 +1,41 @@
+*{
+    padding: 0px ;
+    margin: 0px;
+    box-sizing: border-box;
+}
+#LoadingScreen{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+}
+#logoDiv{
+    width: 190px;   
+}
+#loadingBar{
+    border: 1px solid transparent;
+    background-color: #EBEBEB;
+    width: 160px;
+    margin: 20px;
+    height: 4px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+#blueBar{
+    width: 60px;
+    background-color: #0a66c2;
+    height: 4px;
+    border: 1px solid #0a66c2;
+    border-radius: 5px;
+    animation: loading 1.6s infinite ease-out;
+}
+@keyframes loading{
+    0%{transform: translateX(-30px);}
+   
+    50%{transform: translateX(130px);}
+    
+    100%{transform: translateX(-30px);}
+
+}

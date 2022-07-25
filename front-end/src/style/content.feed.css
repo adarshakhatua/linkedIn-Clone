@@ -199,8 +199,8 @@
     /* border: 1px dashed green; */
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 61px;
+    align-items: flex-start;
+    min-height: 44px;
     width: 540px;
     position: relative;
 }
@@ -209,6 +209,7 @@
     display: flex;
     justify-content: space-between;
     right: 7px;
+    bottom: 4px;
     /* border: 1px solid black; */
 }
 #postCommentDiv>span span{
@@ -223,18 +224,24 @@
 #postCommentDiv>span span:hover{
     background-color: #EBEBEB;
 }
-#postCommentDiv input{
-    width: 464px;
-    min-height: 40px;
-    padding: 0px 10px;
+#postCommentDiv textarea{
+    width: 484px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px 75px 10px 10px;
     border-radius: 30px;
     border: 1px solid #A9A7A7;
     font-size: 14px;
     line-height: 21px;
     color: rgb(0 0 0 / 90%);
+    resize: none;
+
 }
-#postCommentDiv input:focus{
+#postCommentDiv textarea:focus{
     outline: 1px solid #A9A7A7;
+}
+#postCommentDiv textarea::-webkit-scrollbar{
+    width: 0px;
 }
 #commentSortDiv{
     /* border: 1px dashed black; */
@@ -520,5 +527,115 @@
     flex: 1;
 }
 
+/***************************Five Image********************************/
+#FiveImage{
+    /* border: 1px solid black; */
+    position: relative;
+    left: -11px;
+    height: 552px;
+    width: 562px;
+    /* display: grid;
+    grid-template-rows: repeat(2,1fr); */
+}
+.imageRow1{
+    border: 1px solid white;
+    border-bottom: 0px solid white;
+    height: 328px;
+    width: 278px;
+    display: inline-block;
+    margin: 0px;
+    object-fit: cover;
+}
+.imageRow2{
+    border: 1px solid white;
+    height: 218px;
+    width: 184px;
+    display: inline-block;
+    margin: 0px;
+    object-fit: cover;
+
+}
+/***************************Five Image********************************/
 
 
+/************************** Four Image *******************************/
+#FourImage{
+    position: relative;
+    left: -10px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 312px 208px;
+    grid-gap: 1px;
+    height: 520px;
+    width: 560px;
+    box-sizing: border-box;   
+}
+.topImage{
+    grid-column: 1 / 6;
+}
+#FourImage div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/************************** Four Image *******************************/
+
+
+/************************** Three Image *******************************/
+#ThreeImage{
+    border: 1px solid black;
+    position: relative;
+    left: -10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 331px 270px;
+    grid-gap: 1px;
+    height: 605px;
+    width: 560px;
+    box-sizing: border-box;
+}
+#ThreeImage .top{
+    grid-column: 1/4;
+}
+#ThreeImage div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/************************** Three Image *******************************/
+
+
+/************************** Dual Image *******************************/
+#dualImage{
+    /* border: 1px solid black; */
+    position: relative;
+    left: -10px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1px;
+    height: 552px;
+    width: 560px;
+    box-sizing: border-box;
+}
+#dualImage div img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/************************** Dual Image *******************************/
+
+
+/************************** Single Image *******************************/
+#singleImage{
+    position: relative;
+    left: -10px;
+    height: 552px;
+    width: 560px;
+    box-sizing: border-box;
+}
+#singleImage img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+/************************** Single Image *******************************/
