@@ -1,10 +1,11 @@
 import "../style/content.feed.css";
 
 import { BsThreeDots } from "react-icons/bs";
-import { Earth,Like,Comment,Share,Send,Photo,Imogi } from "./custom.icon";
+import { Earth,Like,Comment,Share,Send,Photo,Imogi,Create } from "./custom.icon";
 import { ProfileImage } from "./profileImage";
 import { MdArrowDropDown } from "react-icons/md";
 import { LikeButton } from "./reactionButton";
+import { useState } from "react";
 
 
 // https://static-exp1.licdn.com/sc/h/f4ly07ldn7194ciimghrumv3l
@@ -79,13 +80,7 @@ export const Contentfeed = () => {
                         <span>Comment</span>
                     </button>
 
-                    <div id="shareDiv">
-                        <button>
-                            <Share />
-                            <span>Share</span>
-                        </button>
-                        <div id="sharePop"></div>
-                    </div>
+                    <ShareButton/>
 
                     <button>
                         <Send />
@@ -130,11 +125,10 @@ export const Contentfeed = () => {
                         <div id="commentTxt">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit neque commodi placeat velit? Fugiat quas sequi eligendi, animi minus magnam praesentium reprehenderit natus, inventore id quasi nostrum a? Incidunt, recusandae.
                         </div>
-
-                        <div className="InteractionDiv">
-                            <div id="LikeDiv"><LikeButton buttonName={"Like"} /></div>
-                            <div id="commentDiv">Reply</div>
-                        </div>
+                    </div>
+                    <div className="InteractionDiv">
+                        <div id="LikeDiv"><LikeButton buttonName={"Like"} /></div>
+                        <div id="commentDiv">Reply</div>
                     </div>
                 </div>
 
@@ -156,14 +150,14 @@ export const Contentfeed = () => {
 
                             <div id="ReplyTxt">
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit neque commodi placeat velit? Fugiat quas sequi eligendi, animi minus magnam praesentium reprehenderit natus, inventore id quasi nostrum a? Incidunt, recusandae.
-                            </div>
-                            
-                            <div className="InteractionDiv">
-                            <div id="LikeDiv"><LikeButton buttonName={"Like"} /></div>
-                                <div id="commentDiv">Reply</div>
-                            </div>
+                            </div> 
+                          
                         </div>
-                        
+                    
+                        <div className="InteractionDiv">
+                            <div id="LikeDiv"><LikeButton buttonName={"Like"} /></div>
+                            <div id="commentDiv">Reply</div>
+                        </div>
                         
                 </div>
 
@@ -174,3 +168,41 @@ export const Contentfeed = () => {
 }
 
 
+
+
+const ShareButton = () => {
+
+    const [sharePop, setSharePop] = useState(false);
+    const handleSharePop = () => {
+        setSharePop(!sharePop);
+    }
+
+    return (
+        <div id="shareDiv" onClick={handleSharePop}>
+            <button>
+                <Share />
+                <span>Share</span>
+            </button>
+            {sharePop && <div id="sharePop">
+
+                <div id="repost" >
+                    <Share />
+                    <div className="sharePopSubDiv">
+                        <h3>Repost</h3>
+                        <p>Instantly bring #Subham's post to other's feeds</p>
+                    </div>
+                </div>
+
+                <div id="sharewithThoughts" >
+                    <Create style={{ height: "22px", width: "22px" }} />
+                    <div className="sharePopSubDiv">
+                        <h3>Share with your thoughts</h3>
+                        <p>Create a new post with #Subham's post attached</p>
+                    </div>
+                </div>
+
+            </div>}
+            
+        </div>
+    )
+}

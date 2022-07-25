@@ -257,6 +257,10 @@
     /* border: 1px dotted red; */
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+}
+#Comment .InteractionDiv{
+    margin-left: 50px;
 }
 #CommentOwnerImg{
     height: 40px;
@@ -345,6 +349,7 @@
     display: flex;
     justify-content: flex-end;
     /* border: 1px solid black; */
+    flex-wrap: wrap;
 }
 #ReplyContent {
     width: 420px;
@@ -428,12 +433,15 @@
     font-weight: 400;
 }
 .InteractionDiv{
-    border: 1px solid green;
+    /* border: 1px solid green; */
+    width: 420px;
     height: 16px;
     display: flex;
     font-size: 12px;
     font-weight: 600;
     color: rgb(0 0 0 / 60%);
+    background-color: white;
+    padding-bottom: 10px;
 }
 #LikeDiv{
     /* border: 1px solid blue; */
@@ -470,5 +478,47 @@
     border: 1px solid #EBEBEB;
     background-color: white;
     border-radius: 8px;
+    box-shadow: 0 0 0 1px rgb(0 0 0 / 15%), 0 6px 9px rgb(0 0 0 / 20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    cursor: pointer;
+}
+#sharePop div{
+    /* border: 1px solid black; */
+    display: flex;
+    color: #5E5E5E;
     
 }
+#sharePop div:hover{
+    background-color: #EBEBEB;
+}
+#sharePop .sharePopSubDiv{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 80%;
+    /* border: 1px solid green; */
+}
+.sharePopSubDiv h3{
+    font-size: 14px;
+    /* border: 1px solid black; */
+    margin: 0px;
+    font-weight: 500;
+
+}
+.sharePopSubDiv p{
+    font-size: 12px;
+    /* border: 1px solid black; */
+    margin: 0px;
+}
+#repost,#sharewithThoughts{
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex: 1;
+}
+
+
+
