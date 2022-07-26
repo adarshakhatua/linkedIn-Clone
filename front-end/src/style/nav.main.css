@@ -15,13 +15,15 @@
     display: flex;
     align-items: center;
 }
-#logoDiv{
+#mainDivContent #logoDiv{
     height: 41px;
     width: 41px;
+    /* border: 1px solid black; */
 }
 #logoDiv img{
     height: 100%;
     width: 100%;
+
 }
 #searchDiv{
     height: 34px;
@@ -29,6 +31,7 @@
     /* border: 1px solid black; */
     display: flex;
     align-items: center;
+    position: relative;
 }
 #searchIcon{
     position: relative;
