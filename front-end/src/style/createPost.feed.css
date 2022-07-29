@@ -75,16 +75,29 @@
 #LikeButton{
     position: relative;
 }
+
+
+
+#outerLayout{
+    /* border: 1px solid red; */
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 1000;
+}
 #CreatePostPopDiv{
-    height: 371px;
+    min-height: 371px;
     width: 552px;
+    max-height: 80vh;
     border-radius: 8px;
     background-color: white;
-    position: absolute;
+    position: fixed;
     z-index: 1000;
-    border: 1px solid black;
-    left: 65px;
-    top: -50px;
+    /* border: 1px solid black; */
+    left: 690px;
+    top: 30px;
 }
 #CreatePostPopDivTop{
     height: 28px;
@@ -97,6 +110,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 #closeBtn{
     display: flex;
@@ -112,6 +126,10 @@
 }
 #popDivContent{
     overflow-y: scroll;
+    max-height: 50vh;
+}
+.scrollVisible::-webkit-scrollbar {
+    width: 0px;
 }
 #CreatePostPopDivProfile{
     /* border: 1px solid black; */
@@ -138,16 +156,119 @@
     cursor: pointer;
 }
 #CreatePostPopInput{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     min-height: 120px;
 }
 #CreatePostPopInput textarea{
-    min-height: 96px;
+    height: 96px;
     width: 504px;
     border: none;
     resize: none;
     font-size: 16px;
+
 }
-/* #CreatePostPopInput textarea::-webkit-scrollbar{
+#CreatePostPopInput textarea:focus{
+    outline: none;
+}
+#CreatePostPopInput textarea::-webkit-scrollbar{
     width: 0px;
-} */
+}
+#CreatePostPopbottom{
+    /* border: 1px solid black; */
+    height: 40px;
+    width: 512px;
+    padding: 12px 24px 12px 16px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+#CreatePostPopbottom div:first-child{
+    border-right: 1px solid #cdcdcd;
+    width: 280px;
+    height: 40px;
+    display: flex;
+    padding-right: 5px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+#CreatePostPopbottom div svg{
+    /* border: 1px solid black; */
+    color: rgb(0 0 0 / 60%);
+    padding: 8px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+#CreatePostPopbottom div svg:hover{
+    background-color: #EBEBEB;
+}
+
+#CreatePostPopbottom div:nth-child(2){
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 16px;
+    color: rgb(0 0 0 / 60%);
+    cursor: pointer;
+}
+#CreatePostPopbottom div:nth-child(2):hover{
+    background-color: #EBEBEB;
+}
+#CreatePostPopbottom div:nth-child(2) svg{
+    height: 20px;
+    width: 20px;
+    /* border: 1px solid black; */
+    padding: 2px;
+}
+#CreatePostPopbottom div:last-child{
+    padding: 6px 16px;
+    border-radius: 16px;
+    background-color: #EBEBEB;
+    color: rgb(0 0 0 / 60%);
+    cursor: not-allowed;
+
+}
+
+
+.inputFileBtn{
+    display: none;
+}
+
+
+#imagePreview{
+    /* border: 1px solid black; */
+    height: 300px;
+    overflow-y: scroll;
+}
+#imagePreview img{
+    width: 100%;
+}
+#imagePreviewBtn{
+    /* border: 1px solid black; */
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+#imagePreviewBtn button{
+    height: 33px;
+    width: 70px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    border-radius: 16px;
+    padding: 6px 16px;
+    background-color: #177fe8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+#imagePreviewBtn button:hover{
+    background-color: #006fdf;
+}
