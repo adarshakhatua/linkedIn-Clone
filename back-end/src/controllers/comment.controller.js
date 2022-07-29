@@ -6,6 +6,8 @@ const Comment = require("../models/comment.model");
 
 router.get("/", async (req, res) => {
     try {
+        let page = req.query.page;
+        let 
         const comment = await Comment.find(req.query).lean().exec();
         return res.status(200).send({ comment: comment });
     }

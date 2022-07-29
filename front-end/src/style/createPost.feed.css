@@ -5,6 +5,7 @@
     background-color: white;
     border-radius: 8px;
     padding: 8px 16px 5px 16px;
+    position: relative;
 }
 #createPostFeed1{
     /* border: 1px solid black; */
@@ -74,3 +75,79 @@
 #LikeButton{
     position: relative;
 }
+#CreatePostPopDiv{
+    height: 371px;
+    width: 552px;
+    border-radius: 8px;
+    background-color: white;
+    position: absolute;
+    z-index: 1000;
+    border: 1px solid black;
+    left: 65px;
+    top: -50px;
+}
+#CreatePostPopDivTop{
+    height: 28px;
+    padding: 16px 24px 16px 24px;
+    border-bottom: 1px solid #EBEBEB;
+    font-size: 20px;
+    text-align: left;
+    font-weight: 400;
+    color: rgb(0 0 0 / 90%);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#closeBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+#closeBtn:hover{
+    background-color: #EBEBEB;
+    cursor: pointer;
+}
+#popDivContent{
+    overflow-y: scroll;
+}
+#CreatePostPopDivProfile{
+    /* border: 1px solid black; */
+    height: 78px;
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+}
+#dropDownDiv{
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: rgb(0 0 0 / 90%);
+}
+#dropDownBtn{
+    border: 1px solid rgb(0 0 0 / 60%);
+    color: rgb(0 0 0 / 60%);
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 14px;
+    padding: 3px 5px;
+    cursor: pointer;
+}
+#CreatePostPopInput{
+    border: 1px solid black;
+    min-height: 120px;
+}
+#CreatePostPopInput textarea{
+    min-height: 96px;
+    width: 504px;
+    border: none;
+    resize: none;
+    font-size: 16px;
+}
+/* #CreatePostPopInput textarea::-webkit-scrollbar{
+    width: 0px;
+} */

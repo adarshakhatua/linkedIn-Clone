@@ -126,7 +126,9 @@ export const Contentfeed = () => {
             <div id="contentFeedComment">
 
                 <div id="postCommentDiv">
-                    <ProfileImage imageStyle={{height:"40px",width:"40px"}}/>
+                    <ProfileImage
+                        image={"https://media-exp1.licdn.com/dms/image/C4D03AQE732pYOz74lw/profile-displayphoto-shrink_100_100/0/1649706029434?e=1663804800&v=beta&t=QuJxqFe_hwWQtwemok7NeSjOANgS0YHYrXqqdnuHbdw"}
+                        imageStyle={{ height: "40px", width: "40px" }} />
                     <textarea type="text" placeholder="Add a comment..." id="postComment" onKeyUp={handleInputHeight}/>
                     <span>
                         <span><Imogi style={{ color: "rgb(0 0 0 / 60%)" }} /></span>
