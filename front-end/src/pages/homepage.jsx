@@ -29,14 +29,14 @@ export const HomePage = () => {
         <div id="welcomeDiv">
             <div id="welcomeDivContent">
                 <h1>Welcome to your professional community</h1>
-                <div class="field">
+                <div className="field">
                     <input type="text" name="fullname" id="fullname" placeholder=" "/>
-                        <label for="fullname">Email or phone number</label>
+                        <label htmlFor="fullname">Email or phone number</label>
                 </div>
 
-                <div class="field">
+                <div className="field">
                     <input type="email" name="email" id="email" placeholder=" " />
-                        <label for="email">Password</label>
+                        <label htmlFor="email">Password</label>
                 </div>
                 <button id="showBtn">Show</button>
                 <p id="forgetPassword">Forgot password?</p>
@@ -64,7 +64,7 @@ export const HomePage = () => {
                     <div id="exploreDivRightContent">
                         {
                             exploreTopics.map((item) => {
-                                return <div className="exploreDivRightContentSIngle">{item}</div>
+                                return <div className="exploreDivRightContentSIngle" key={item}>{item}</div>
                             })
                         }
                     </div>
@@ -86,7 +86,7 @@ export const HomePage = () => {
                     <div id="findJobDivRightContent">
                         {
                             job.map((item) => {
-                                return <div className="findJobDivRightContentSIngle">{item}</div>
+                                return <div className="findJobDivRightContentSIngle" key={item}>{item}</div>
                             })
                         }
                     </div>
@@ -152,9 +152,9 @@ export const HomePage = () => {
                             height="378px"
                             src="https://www.youtube.com/embed/IlYUUN8rL_Y"
                             title="YouTube video player"
-                            frameborder="0"
+                            frameBorder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
+                            allowFullScreen>
                             
                         </iframe>
                     </div>

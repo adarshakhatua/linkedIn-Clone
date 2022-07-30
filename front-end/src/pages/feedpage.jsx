@@ -32,7 +32,7 @@ export const FeedPage = () => {
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
-            console.log(entry.target.id);
+            // console.log(entry.target.id);
             if (!entry.isIntersecting && entry.target.id === "userFeed") {
                 document.getElementById("discoverFeed").style = "position:fixed;top:75px"
             }
