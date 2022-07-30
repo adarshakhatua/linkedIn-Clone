@@ -88,9 +88,9 @@
     z-index: 1000;
 }
 #CreatePostPopDiv{
-    min-height: 371px;
+    min-height: 433px;
     width: 552px;
-    max-height: 80vh;
+    max-height: calc(80vh*1.2);
     border-radius: 8px;
     background-color: white;
     position: fixed;
@@ -182,7 +182,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: absolute;
+    bottom: 0px;
 }
 #CreatePostPopbottom div:first-child{
     border-right: 1px solid #cdcdcd;
@@ -254,6 +255,8 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    position: relative;
+    bottom: 0px;
 }
 #imagePreviewBtn button{
     height: 33px;

@@ -53,15 +53,15 @@ export const imagePreviewUnmount = () => {
     }
 }
 
-export const bottomMediaDivMount = () => {
+export const imagePreviewBottonDivMount = () => {
     return {
-        type: createPostPopAction.bottom_media_div_mount,
+        type: createPostPopAction.image_preview_botton_div_mount,
 
     } 
 }
 
-export const bottomMediaDivUnmount = () => {
+export const imagePreviewBottonDivUnmount = () => {
     return {
-        type: createPostPopAction.bottom_media_div_unmount,
+        type: createPostPopAction.image_preview_botton_div_unmount,
     }
 }

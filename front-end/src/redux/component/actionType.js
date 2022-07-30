@@ -7,6 +7,6 @@ export const createPostPopAction = {
     image_preview_unmount: "image_preview_unmount",
     image_preview_image_mount: "image_preview_image_mount",
     image_preview_image_unmount: "image_preview_image_unmount",
-    bottom_media_div_mount:"bottom_media_div_mount",
-    bottom_media_div_unmount:"bottom_media_div_unmount",
+    image_preview_botton_div_mount:"image_preview_botton_div_mount",
+    image_preview_botton_div_unmount:"image_preview_botton_div_unmount",
 }

@@ -5,7 +5,7 @@ const initState = {
     create_post_title:"Create a post",
     image_preview_image:null,
     image_preview_div: false,
-    bottom_media_div:true,
+    image_preview_botton_div:false,
 }
 
 export const componentReducer = (state=initState, action) => {
@@ -50,20 +50,18 @@ export const componentReducer = (state=initState, action) => {
                 ...state,
                 image_preview_div:false,
             }
-        case createPostPopAction.bottom_media_div_mount:
+        case createPostPopAction.image_preview_botton_div_mount:
             return {
                 ...state,
-                bottom_media_div:true,
+                image_preview_botton_div:true,
 
             }
-        case createPostPopAction.bottom_media_div_unmount:
+        case createPostPopAction.image_preview_botton_div_unmount:
             return {
                 ...state,
-                bottom_media_div:false,
+                image_preview_botton_div:false,
             }
         default:
-            return {
-                state
-            };
+            return state;
     }
 }

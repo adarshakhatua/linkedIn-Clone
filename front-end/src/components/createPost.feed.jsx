@@ -5,13 +5,12 @@ import { ProfileImage } from "./profileImage";
 import { GrClose } from "react-icons/gr";
 import { IoMdArrowDropdown } from "react-icons/io"
 import { useSelector,useDispatch } from "react-redux";
-import { createPostPopMount, createPostPopUnmount, createPostTitleMount, imagePreviewImageMount } from "../redux/component/action";
+import { bottomMediaDivUnmount, createPostPopMount, createPostPopUnmount, createPostTitleMount, imagePreviewBottonDivMount, imagePreviewBottonDivUnmount, imagePreviewImageMount, imagePreviewImageUnMount } from "../redux/component/action";
 
 
 export const CreatePostFeed = () => {
 
     const modal = useSelector((store) => store.component.create_post_pop);
-    console.log(modal)
     const dispatch = useDispatch();
     const handleModal = () => {
         dispatch(createPostPopMount());
@@ -59,8 +58,9 @@ const CreatePostPop = () => {
    
     const title = useSelector((store) => store.component.create_post_title);
     const image = useSelector((store) => store.component.image_preview_image);
+    const imagePreviewBtn = useSelector((store) => store.component.image_preview_botton_div);
+    console.log(image);
     const dispatch = useDispatch();
-    console.log(title)
 
     return (
         <div id="outerLayout">
@@ -70,11 +70,13 @@ const CreatePostPop = () => {
                     {title}
                     <div id="closeBtn" onClick={() => { dispatch(createPostPopUnmount()) }}><GrClose /></div>
                 </div>
-                <Profile />
-                {/* <BottomMedia/> */}
-                {/* {(title === "Create a post" && (image !== null && image !== undefined)) ? <><Profile /></> : <></>}
-                {(title === "Create a post" && image===null) ? <Profile/> : <><div id="imagePreview"><img src={image} alt="" /></div></>} */}
-                {image === null ? <BottomMedia /> : <><div id="imagePreviewBtn"><button onClick={() => { dispatch(createPostTitleMount("Create a post")) }}>Done</button></div></>}
+                
+                {(title === "Create a post" && (image !== null && image !== undefined)) ? <><Profile /></> : <></>}
+                {(title === "Create a post" && image===null) ? <Profile/> : <><div id="imagePreview"><img src={image} alt="" /></div></>}
+                {(image === null) && <BottomMedia />}
+                {imagePreviewBtn && <ImagePreviewButton />}
+                
+                
             </div>
         </div>
     )
@@ -142,7 +144,7 @@ const BottomMedia = () => {
             <div>
                 <form action="" encType="multipart/form-data">
                     <input type="file" name="photo" id="photo" style={{ display: "none" }} onChange={imagePreview} />
-                    <label htmlFor="photo" ><Photo /></label>
+                    <label htmlFor="photo" onClick={() => { dispatch(createPostTitleMount("Edit your photo")); setTimeout(() => { document.getElementById("CreatePostPopbottom").style.display = "none"; dispatch(imagePreviewBottonDivMount()) },0)}}><Photo /></label>
                     <input type="file" name="" id="video" style={{ display: "none" }} />
                     <label htmlFor="video"><Video /></label>
                 </form>
@@ -159,6 +161,46 @@ const BottomMedia = () => {
             </div>
 
             <div disabled>Post</div>
+        </div>
+    )
+}
+
+
+const ImagePreviewButton = () => {
+
+    const dispatch = useDispatch();
+    const image = useSelector((store) => store.component.image_preview_image);
+    useEffect(() => {
+        if (image !== null) {
+            document.getElementById("backBtn").style.display = "none";
+            document.getElementById("doneBtn").disabled = false;
+            document.getElementById("doneBtn").setAttribute("style", "cursor:poiter;background-color:#177fe8;color:white");
+        }
+        else if (image === null) {
+            document.getElementById("doneBtn").disabled = true;
+            document.getElementById("doneBtn").setAttribute("style", "cursor:not-allowed;background-color:#ebebeb;color:#666666");   
+        }
+     }, [image]);
+
+    return (
+        <div id="imagePreviewButtonDiv">
+            <div id="imagePreviewBtn">
+                <button
+                    id="backBtn"
+                    onClick={() => {
+                        dispatch(createPostTitleMount("Create a post"));
+                        dispatch(imagePreviewImageUnMount());
+                        document.getElementById("CreatePostPopbottom").style.display = "flex";
+                        dispatch(imagePreviewBottonDivUnmount());
+                    }}>
+                    Back</button>
+                <button
+                    id="doneBtn"
+                    onClick={() => {
+                        dispatch(createPostTitleMount("Create a post"));
+                    }}>
+                    Done</button>
+            </div>
         </div>
     )
 }
