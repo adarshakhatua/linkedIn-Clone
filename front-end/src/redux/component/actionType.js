@@ -1,4 +1,5 @@
 export const createPostPopAction = {
+    create_post_text:"create_post_text",
     create_post_pop_mount:"create_post_pop_mount",
     create_post_pop_unmount:"create_post_pop_unmount",
     create_post_title_mount:"create_post_title_mount",

@@ -1,11 +1,11 @@
-import {  useEffect } from "react";
+import {  useEffect, useState } from "react";
 import "../style/createPost.feed.css";
 import { Photo, Video,Document,Job,Celebrate,Poll,More,Comment, Event, Article,Earth } from "./custom.icon";
 import { ProfileImage } from "./profileImage";
 import { GrClose } from "react-icons/gr";
 import { IoMdArrowDropdown } from "react-icons/io"
 import { useSelector,useDispatch } from "react-redux";
-import { bottomMediaDivUnmount, createPostPopMount, createPostPopUnmount, createPostTitleMount, imagePreviewBottonDivMount, imagePreviewBottonDivUnmount, imagePreviewImageMount, imagePreviewImageUnMount } from "../redux/component/action";
+import { createPostPopMount, createPostPopUnmount, createPostText, createPostTitleMount, imagePreviewBottonDivMount, imagePreviewBottonDivUnmount, imagePreviewImageMount, imagePreviewImageUnMount } from "../redux/component/action";
 
 
 export const CreatePostFeed = () => {
@@ -24,7 +24,7 @@ export const CreatePostFeed = () => {
         else {
             document.body.style.overflow = "visible";
         }
-        document.getElementById("outerLayout")?.addEventListener("click", (e) => { if (!e.target.closest("#CreatePostPopDiv")) { dispatch(createPostPopUnmount()); console.log(e.target.className) } })
+        document.getElementById("outerLayout")?.addEventListener("click", (e) => { if (!e.target.closest("#CreatePostPopDiv")) { dispatch(createPostPopUnmount()) } })
     }, [modal])
 
     return (
@@ -53,13 +53,12 @@ export const CreatePostFeed = () => {
 }
 
 
-
 const CreatePostPop = () => {
    
     const title = useSelector((store) => store.component.create_post_title);
     const image = useSelector((store) => store.component.image_preview_image);
     const imagePreviewBtn = useSelector((store) => store.component.image_preview_botton_div);
-    console.log(image);
+    // console.log(imagePreviewBtn);
     const dispatch = useDispatch();
 
     return (
@@ -68,12 +67,17 @@ const CreatePostPop = () => {
 
                 <div id="CreatePostPopDivTop" >
                     {title}
-                    <div id="closeBtn" onClick={() => { dispatch(createPostPopUnmount()) }}><GrClose /></div>
+                    <div id="closeBtn"
+                        onClick={() => {
+                            dispatch(createPostPopUnmount())
+                            dispatch(imagePreviewImageUnMount())
+                        }}><GrClose /></div>
                 </div>
                 
                 {(title === "Create a post" && (image !== null && image !== undefined)) ? <><Profile /></> : <></>}
                 {(title === "Create a post" && image===null) ? <Profile/> : <><div id="imagePreview"><img src={image} alt="" /></div></>}
-                {(image === null) && <BottomMedia />}
+                {(image === null || (image && (title === "Create a post"))) && <BottomMedia />}
+
                 {imagePreviewBtn && <ImagePreviewButton />}
                 
                 
@@ -86,6 +90,7 @@ const CreatePostPop = () => {
 const Profile = () => {
 
     const handleCreatePostInputHeight = (e) => {
+
         const inpt = document.getElementById("CreatePostPop_Input");
         const popContent = document.getElementById("popDivContent");
 
@@ -101,6 +106,7 @@ const Profile = () => {
         }
 
     }
+    const dispatch = useDispatch();
 
     return (
         <div id="popDivContent" className="scrollVisible">
@@ -120,7 +126,15 @@ const Profile = () => {
             </div>
 
             <div id="CreatePostPopInput">
-                <textarea name="" onKeyUp={handleCreatePostInputHeight} id="CreatePostPop_Input" cols="30" rows="10" placeholder="What do you want to talk" ></textarea>
+                <textarea
+                    name=""
+                    onKeyUp={handleCreatePostInputHeight}
+                    id="CreatePostPop_Input"
+                    cols="30"
+                    rows="10"
+                    placeholder="What do you want to talk"
+                    onChange={(e) => { dispatch(createPostText(e.target.value))}}
+                ></textarea>
             </div>
         </div>
     )
@@ -131,21 +145,37 @@ const BottomMedia = () => {
 
     
     const dispatch = useDispatch();
-
-
+    const title = useSelector((store) => store.component.create_post_title);
+    const image = useSelector((store) => store.component.image_preview_image);
+    const text = useSelector((store) => store.component.create_post_text).trim();
+    // console.log(text);
     const imagePreview = (e) => {
         const imageUrl = URL.createObjectURL(e.target.files[0]);
         dispatch(imagePreviewImageMount(imageUrl));
     }
-
+    const [disable, setDisable] = useState(false);
+    
     return (
         <div id="CreatePostPopbottom">
 
-            <div>
+            <div className={(image && title==="Create a post")?"notAllowed":""} id="createPostMediaBtn">
                 <form action="" encType="multipart/form-data">
-                    <input type="file" name="photo" id="photo" style={{ display: "none" }} onChange={imagePreview} />
-                    <label htmlFor="photo" onClick={() => { dispatch(createPostTitleMount("Edit your photo")); setTimeout(() => { document.getElementById("CreatePostPopbottom").style.display = "none"; dispatch(imagePreviewBottonDivMount()) },0)}}><Photo /></label>
-                    <input type="file" name="" id="video" style={{ display: "none" }} />
+                    <input type="file" name="photo" id="photo" style={{ display: "none" }} onChange={imagePreview} disabled={disable}/>
+                    <label htmlFor="photo"
+                        onClick={() => {
+                            if (image && (title === "Create a post")) {
+                                setDisable(true);
+                                return;
+                            }
+                            dispatch(createPostTitleMount("Edit your photo"));
+                            setTimeout(() => {
+                                document.getElementById("CreatePostPopbottom").style.display = "none";
+                                dispatch(imagePreviewBottonDivMount())
+                            }, 0)
+                        }}>
+                        <Photo />
+                    </label>
+                    <input type="file" name="" id="video" style={{ display: "none" }} disabled={disable}/>
                     <label htmlFor="video"><Video /></label>
                 </form>
                 <Document />
@@ -160,7 +190,16 @@ const BottomMedia = () => {
                 Anyone
             </div>
 
-            <div disabled>Post</div>
+            <div className={((image || (text !== "")) && title === "Create a post") ? "Allowed" : "Disable"}
+                onClick={() => {
+                    if ((image || (text!=="")) && title === "Create a post") {
+                        console.log(!disable)
+                    }
+                    else { return }
+                    
+                }}>
+                Post
+            </div>
         </div>
     )
 }
@@ -170,6 +209,7 @@ const ImagePreviewButton = () => {
 
     const dispatch = useDispatch();
     const image = useSelector((store) => store.component.image_preview_image);
+
     useEffect(() => {
         if (image !== null) {
             document.getElementById("backBtn").style.display = "none";
@@ -190,7 +230,9 @@ const ImagePreviewButton = () => {
                     onClick={() => {
                         dispatch(createPostTitleMount("Create a post"));
                         dispatch(imagePreviewImageUnMount());
-                        document.getElementById("CreatePostPopbottom").style.display = "flex";
+                        if (document.getElementById("CreatePostPopbottom")) {
+                            document.getElementById("CreatePostPopbottom").style.display = "flex";
+                        }
                         dispatch(imagePreviewBottonDivUnmount());
                     }}>
                     Back</button>
@@ -198,6 +240,10 @@ const ImagePreviewButton = () => {
                     id="doneBtn"
                     onClick={() => {
                         dispatch(createPostTitleMount("Create a post"));
+                        dispatch(imagePreviewBottonDivUnmount());
+                        if (document.getElementById("CreatePostPopbottom")) {
+                            document.getElementById("CreatePostPopbottom").style.display = "flex";
+                        }
                     }}>
                     Done</button>
             </div>

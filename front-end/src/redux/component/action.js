@@ -1,6 +1,13 @@
 import { createPostPopAction } from "./actionType";
 
 
+export const createPostText = (data) => {
+    return {
+        type: createPostPopAction.create_post_text,
+        payload:data
+    }
+}
+
 export const createPostPopMount = () => {
     return {
         type: createPostPopAction.create_post_pop_mount,

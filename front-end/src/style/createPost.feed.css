@@ -95,6 +95,9 @@
     background-color: white;
     position: fixed;
     z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     /* border: 1px solid black; */
     left: 690px;
     top: 30px;
@@ -158,6 +161,7 @@
 #CreatePostPopInput{
     /* border: 1px solid black; */
     min-height: 120px;
+    margin-bottom: 60px;
 }
 #CreatePostPopInput textarea{
     height: 96px;
@@ -179,10 +183,12 @@
     width: 512px;
     padding: 12px 24px 12px 16px;
     margin-top: 15px;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: absolute;
+    position: relative;
     bottom: 0px;
 }
 #CreatePostPopbottom div:first-child{
@@ -274,4 +280,25 @@
 }
 #imagePreviewBtn button:hover{
     background-color: #006fdf;
+}
+
+
+#CreatePostPopbottom div.notAllowed svg{
+    cursor: not-allowed;
+    color: #c7c7c7;
+}
+#CreatePostPopbottom div.notAllowed svg:hover{
+    background-color: transparent;
+}
+
+#CreatePostPopbottom div.Allowed{
+    background-color: #177fe8;
+    color: white;
+    cursor: pointer;
+}
+#CreatePostPopbottom div.Allowed:Hover{
+    background-color: #006fdf;
+}
+#CreatePostPopbottom div.Disable{
+    
 }

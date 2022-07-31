@@ -1,6 +1,7 @@
 import { createPostPopAction } from "./actionType";
 
 const initState = {
+    create_post_text:"",
     create_post_pop:false,
     create_post_title:"Create a post",
     image_preview_image:null,
@@ -10,6 +11,11 @@ const initState = {
 
 export const componentReducer = (state=initState, action) => {
     switch (action.type) {
+        case createPostPopAction.create_post_text:
+            return {
+                ...state,
+                create_post_text:action.payload,
+            }
         case createPostPopAction.create_post_pop_mount:
             return {
                 ...state,
