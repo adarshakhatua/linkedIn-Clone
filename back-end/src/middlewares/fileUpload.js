@@ -27,8 +27,6 @@ const fileFilter=(req, file, cb)=> {
 
 }
 
-
-
 const option = {
     storage: storage,
     fileFilter: fileFilter,

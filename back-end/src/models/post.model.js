@@ -6,7 +6,7 @@ const postSchema = new mongoose.Schema({
     post_text: { type: String, required: false },
     post_media: { type: String, required: false },
     media_type: { type: String, required: false, },
-    is_commetable: { type: Boolean, required: true, default: true },
+    is_commetable: { type: Boolean, required: false, default: true },
     post_id:{type:mongoose.Schema.Types.ObjectId,required:false},
 }, {
     versionKey:false,

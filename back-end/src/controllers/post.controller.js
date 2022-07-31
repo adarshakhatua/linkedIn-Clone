@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 
 const Post = require("../models/post.model");
-
+const fileUpload = require('../middlewares/fileUpload');
 
 router.get("/", async (req, res) => {
     try {
@@ -11,7 +11,7 @@ router.get("/", async (req, res) => {
         return res.status(200).send({ post: post });
     }
     catch (err) {
-        return res.status(500).send({ message: message });
+        return res.status(500).send({ message: err.message });
     }
 })
 
@@ -21,27 +21,27 @@ router.get("/:id", async (req, res) => {
         return res.status(200).send({ post: post });
     }
     catch (err) {
-        return res.status(500).send({ message: message });
+        return res.status(500).send({ message: err.message });
     }
 })
 
-router.post("/", async (req, res) => {
+router.post("/:userId/", fileUpload("photo","single"), async (req, res) => {
     try {
-        const post = await Post.create(req.body);
+        const post = await Post.create({ ...req.body, post_media:req.file.path});
         return res.status(201).send({ post: post });
     }
     catch (err) {
-        return res.status(500).send({ message: message });
+        return res.status(500).send({ message: err.message });
     }
 })
 
-router.patch("/:id", async (req, res) => {
+router.patch("/:userId/:id", fileUpload("photo", "single"), async (req, res) => {
     try {
-        const post = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const post = await Post.findByIdAndUpdate(req.params.id, { ...req.body, post_media: req.file.path }, { new: true });
         return res.status(200).send({ post: post });
     }
     catch (err) {
-        return res.status(500).send({ message: message });
+        return res.status(500).send({ message: err.message });
     }
 })
 
@@ -51,7 +51,7 @@ router.delete("/:id", async (req, res) => {
         return res.status(200).send({ post: post });
     }
     catch (err) {
-        return res.status(500).send({ message: message });
+        return res.status(500).send({ message: err.message });
     }
 })
 

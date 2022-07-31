@@ -6,6 +6,7 @@ import { GrClose } from "react-icons/gr";
 import { IoMdArrowDropdown } from "react-icons/io"
 import { useSelector,useDispatch } from "react-redux";
 import { createPostPopMount, createPostPopUnmount, createPostText, createPostTitleMount, imagePreviewBottonDivMount, imagePreviewBottonDivUnmount, imagePreviewImageMount, imagePreviewImageUnMount } from "../redux/component/action";
+import { createPost } from "../redux/post/action";
 
 
 export const CreatePostFeed = () => {
@@ -25,7 +26,7 @@ export const CreatePostFeed = () => {
             document.body.style.overflow = "visible";
         }
         document.getElementById("outerLayout")?.addEventListener("click", (e) => { if (!e.target.closest("#CreatePostPopDiv")) { dispatch(createPostPopUnmount()) } })
-    }, [modal])
+    }, [modal,])
 
     return (
         <>
@@ -192,8 +193,17 @@ const BottomMedia = () => {
 
             <div className={((image || (text !== "")) && title === "Create a post") ? "Allowed" : "Disable"}
                 onClick={() => {
-                    if ((image || (text!=="")) && title === "Create a post") {
-                        console.log(!disable)
+                    if ((image || (text !== "")) && title === "Create a post") {
+
+                        let payload = {
+                            user_id: "62e27b0dbff686b3c5daf4f2",
+                            entity_type: "post",
+                            post_text: text,
+                            media_type: "image",
+                        }
+                        payload = JSON.stringify(payload);
+                        let userId = "62e27b0dbff686b3c5daf4f2";
+                        dispatch(createPost(payload, userId));
                     }
                     else { return }
                     
