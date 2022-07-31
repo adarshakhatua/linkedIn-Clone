@@ -1,5 +1,6 @@
 const express = require("express");
 const UserProfile = require("../models/userProfile.model");
+const uploadFiles = require("../middlewares/fileUpload");
 
 const router = express.Router();
 
@@ -24,9 +25,9 @@ router.get("/:id", async (req, res) => {
 })
 
 
-router.post("/", async (req, res) => {
+router.post("/", uploadFiles("profile_pic","single"), async (req, res) => {
     try {
-        const userProfile = await UserProfile.create(req.body);
+        const userProfile = await UserProfile.create({ ...req.body, profile_pic:req.file.path});
         return res.status(201).send({ userProfile: userProfile });
     }
     catch (err) {
@@ -34,9 +35,11 @@ router.post("/", async (req, res) => {
     }
 })
 
-router.patch("/:id", async (req, res) => {
+router.patch("/:id", uploadFiles("profile_pic", "single"), async (req, res) => {
     try {
-        const userProfile = await UserProfile.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const userProfile = await UserProfile.findByIdAndUpdate(req.params.id, { ...req.body, profile_pic:req.file.path}, { new: true });
+        console.log(req.file);
+        console.log(req.body);
         return res.status(200).send({ userProfile: userProfile });
     }
     catch (err) {
