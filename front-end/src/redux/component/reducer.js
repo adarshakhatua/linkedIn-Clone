@@ -14,7 +14,7 @@ export const componentReducer = (state=initState, action) => {
         case createPostPopAction.create_post_text:
             return {
                 ...state,
-                create_post_text:action.payload,
+                create_post_text: action.payload,
             }
         case createPostPopAction.create_post_pop_mount:
             return {

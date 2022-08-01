@@ -11,8 +11,8 @@ const storage = multer.diskStorage({
     }
 })
 
-const fileFilter=(req, file, cb)=> {
-    // console.log(file)
+const fileFilter = (req, file, cb) => {
+    
     // The function should call `cb` with a boolean
     // to indicate if the file should be accepted
 

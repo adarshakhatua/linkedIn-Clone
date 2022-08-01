@@ -77,7 +77,8 @@ const CreatePostPop = () => {
                 
                 {(title === "Create a post" && (image !== null && image !== undefined)) ? <><Profile /></> : <></>}
                 {(title === "Create a post" && image===null) ? <Profile/> : <><div id="imagePreview"><img src={image} alt="" /></div></>}
-                {(image === null || (image && (title === "Create a post"))) && <BottomMedia />}
+                {/* {(image === null || (image && (title === "Create a post"))) && <BottomMedia />} */}
+                <BottomMedia/>
 
                 {imagePreviewBtn && <ImagePreviewButton />}
                 
@@ -108,6 +109,7 @@ const Profile = () => {
 
     }
     const dispatch = useDispatch();
+    const text = useSelector((store) => store.component.create_post_text);
 
     return (
         <div id="popDivContent" className="scrollVisible">
@@ -134,6 +136,7 @@ const Profile = () => {
                     cols="30"
                     rows="10"
                     placeholder="What do you want to talk"
+                    value={text}
                     onChange={(e) => { dispatch(createPostText(e.target.value))}}
                 ></textarea>
             </div>
@@ -155,13 +158,21 @@ const BottomMedia = () => {
         dispatch(imagePreviewImageMount(imageUrl));
     }
     const [disable, setDisable] = useState(false);
-    
+    const [file, setFile] = useState(null);
+    const handleFileChange = (e) => {
+        setFile(e.target.files[0]);
+    }
+    const formData = new FormData();
+    if (file) {
+        formData.append("photo", file, file.name);
+    }
+    console.log(file)
     return (
         <div id="CreatePostPopbottom">
 
             <div className={(image && title==="Create a post")?"notAllowed":""} id="createPostMediaBtn">
                 <form action="" encType="multipart/form-data">
-                    <input type="file" name="photo" id="photo" style={{ display: "none" }} onChange={imagePreview} disabled={disable}/>
+                    <input type="file" name="photo" id="photo" style={{ display: "none" }} onChange={(e) => { imagePreview(e);handleFileChange(e) }} disabled={disable}/>
                     <label htmlFor="photo"
                         onClick={() => {
                             if (image && (title === "Create a post")) {
@@ -201,9 +212,11 @@ const BottomMedia = () => {
                             post_text: text,
                             media_type: "image",
                         }
-                        payload = JSON.stringify(payload);
+                        for (let key in payload) {
+                            formData.append(`${key}`, `${payload[key]}`);
+                        }
                         let userId = "62e27b0dbff686b3c5daf4f2";
-                        dispatch(createPost(payload, userId));
+                        dispatch(createPost(formData, userId));
                     }
                     else { return }
                     

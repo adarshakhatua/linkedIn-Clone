@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 const userProfileController = require("./controllers/userProfile.controlle");
 const SkillController = require("./controllers/skills.controller");
@@ -14,6 +15,7 @@ const UserEducationController = require("./controllers/userEducation.controller"
 const UserSkillController = require("./controllers/userSkill.controller");
 
 
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 
 app.use("/userProfiles", userProfileController);

@@ -5,7 +5,7 @@ const router = express.Router();
 const Post = require("../models/post.model");
 const fileUpload = require('../middlewares/fileUpload');
 
-router.get("/", async (req, res) => {
+router.get("/:userId/", async (req, res) => {
     try {
         const post = await Post.find(req.query).lean().exec();
         return res.status(200).send({ post: post });
@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
     }
 })
 
-router.get("/:id", async (req, res) => {
+router.get("/:userId/:id", async (req, res) => {
     try {
         const post = await Post.findById(req.params.id).lean().exec();
         return res.status(200).send({ post: post });
@@ -27,7 +27,9 @@ router.get("/:id", async (req, res) => {
 
 router.post("/:userId/", fileUpload("photo","single"), async (req, res) => {
     try {
-        const post = await Post.create({ ...req.body, post_media:req.file.path});
+        let post;
+        if (req.file) { post = await Post.create({ ...req.body, post_media: req.file.path }); } 
+        else { post = await Post.create(req.body) };
         return res.status(201).send({ post: post });
     }
     catch (err) {
