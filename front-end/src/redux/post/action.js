@@ -21,13 +21,26 @@ export const createPostFailure = (data) => {
     }
 }
 
+export const mediaUpload = (data) => {
+    return {
+        type: createPostAction.media_upload,
+        payload:data
+    }
+}
 
 export const createPost = (payload,userId) => async (dispatch) => {
     dispatch(createPostRequest());
+
     return axios({
         url: `http://localhost:8080/posts/${userId}`,
         method: "POST",
         data: payload,
+        onUploadProgress: function(progressEvent){
+            
+            const percentCompleted = Math.round((progressEvent.loaded / progressEvent.total) * 100);
+            dispatch(mediaUpload(percentCompleted));
+        }
+
     })
         .then((res) => dispatch(createPostSuccess(res.data)))
         .catch((err) => dispatch(createPostFailure(err.message)));

@@ -4,7 +4,8 @@ import { createPostAction } from "./actionType"
 const initState = {
     post_loading: false,
     post_data: null,
-    post_error:false,
+    post_error: false,
+    media_upload_stat:0,
 }
 
 export const postReducer = (state=initState, action) => {
@@ -27,6 +28,11 @@ export const postReducer = (state=initState, action) => {
                 ...state,
                 post_loading: false,
                 post_error: action.payload,
+            }
+        case createPostAction.media_upload:
+            return {
+                ...state,
+                media_upload_stat:action.payload,
             }
         default:
             return state;

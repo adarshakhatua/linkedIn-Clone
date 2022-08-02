@@ -13,9 +13,13 @@ export const CreatePostFeed = () => {
 
     const modal = useSelector((store) => store.component.create_post_pop);
     const dispatch = useDispatch();
+
+    const postData = useSelector((store) => store.post.post_data);
+
     const handleModal = () => {
         dispatch(createPostPopMount());
     }
+
     //modal functionality......
     useEffect(() => {
         if (modal) {
@@ -28,9 +32,12 @@ export const CreatePostFeed = () => {
         document.getElementById("outerLayout")?.addEventListener("click", (e) => { if (!e.target.closest("#CreatePostPopDiv")) { dispatch(createPostPopUnmount()) } })
     }, [modal,])
 
+    //unmount modal when post succesful
+    useDispatch(() => { if (postData) { dispatch(createPostPopUnmount()); }},[postData])
+
     return (
         <>
-            {!modal && <div id="createPostFeed">
+            {(!modal) && <div id="createPostFeed">
                 <div id="createPostFeed1">
 
                     <ProfileImage
@@ -47,7 +54,7 @@ export const CreatePostFeed = () => {
                     <div id="createPostWriteArticleDiv" className="createPostComponent"><Article /><p>Write article</p></div>
                 </div>
             </div>}
-            {modal && <CreatePostPop />}
+            {(modal && !postData ) && <CreatePostPop />}
         </>
 
     )
@@ -59,7 +66,7 @@ const CreatePostPop = () => {
     const title = useSelector((store) => store.component.create_post_title);
     const image = useSelector((store) => store.component.image_preview_image);
     const imagePreviewBtn = useSelector((store) => store.component.image_preview_botton_div);
-    // console.log(imagePreviewBtn);
+    const uploadStat = useSelector((store) => store.post.media_upload_stat);
     const dispatch = useDispatch();
 
     return (
@@ -79,9 +86,10 @@ const CreatePostPop = () => {
                 {(title === "Create a post" && image===null) ? <Profile/> : <><div id="imagePreview"><img src={image} alt="" /></div></>}
                 {/* {(image === null || (image && (title === "Create a post"))) && <BottomMedia />} */}
                 <BottomMedia/>
-
                 {imagePreviewBtn && <ImagePreviewButton />}
-                
+                {uploadStat?  <div id="progressbar">
+                    <div id="loadingbar" style={{ width: `${uploadStat}%`}}></div>
+            </div>:null}
                 
             </div>
         </div>
@@ -152,21 +160,29 @@ const BottomMedia = () => {
     const title = useSelector((store) => store.component.create_post_title);
     const image = useSelector((store) => store.component.image_preview_image);
     const text = useSelector((store) => store.component.create_post_text).trim();
-    // console.log(text);
+    const postLoading = useSelector((store) => store.post.post_loading);
+    const postError = useSelector((store) => store.post.post_error);
+
     const imagePreview = (e) => {
         const imageUrl = URL.createObjectURL(e.target.files[0]);
         dispatch(imagePreviewImageMount(imageUrl));
     }
+
     const [disable, setDisable] = useState(false);
     const [file, setFile] = useState(null);
+
     const handleFileChange = (e) => {
         setFile(e.target.files[0]);
     }
+
     const formData = new FormData();
     if (file) {
         formData.append("photo", file, file.name);
+        formData.append("media_type", file.type);
     }
-    console.log(file)
+    //error 
+    useEffect(() => { if (postError) { alert(postError) } }, [postError]);
+    
     return (
         <div id="CreatePostPopbottom">
 
@@ -202,7 +218,7 @@ const BottomMedia = () => {
                 Anyone
             </div>
 
-            <div className={((image || (text !== "")) && title === "Create a post") ? "Allowed" : "Disable"}
+            <div className={(((image || (text !== "")) && !postLoading) && title === "Create a post") ? "Allowed" : "Disable"}
                 onClick={() => {
                     if ((image || (text !== "")) && title === "Create a post") {
 
@@ -210,7 +226,6 @@ const BottomMedia = () => {
                             user_id: "62e27b0dbff686b3c5daf4f2",
                             entity_type: "post",
                             post_text: text,
-                            media_type: "image",
                         }
                         for (let key in payload) {
                             formData.append(`${key}`, `${payload[key]}`);
