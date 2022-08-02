@@ -2,9 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import { Navbar } from "./navbar";
 import { HomePage } from "../pages/homepage";
 import { FeedPage } from "../pages/feedpage";
-import { NavMain } from "../components/nav.main";
+import { ProfilePage } from "../pages/profilepage";
+import { NavMain } from "./nav.main";
 import { Footer } from './footer';
-import { LoadingScreen } from "../components/loading.screen";
+import { LoadingScreen } from "./loading.screen";
 
 export const AllRoutes = () => {
     return <Routes>
@@ -29,6 +30,14 @@ export const AllRoutes = () => {
         <Route
             path="/loading"
             element={<LoadingScreen></LoadingScreen>}
+        ></Route>
+
+        <Route
+            path="/profile"
+            element={<>
+                <NavMain></NavMain>
+                <ProfilePage></ProfilePage>
+            </>}
         ></Route>
 
     </Routes>

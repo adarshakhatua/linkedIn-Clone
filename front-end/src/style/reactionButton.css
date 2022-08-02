@@ -47,12 +47,12 @@ button#LikeButton{
 
     10% {
         transform: translateY(2px);
-        height: 34px
+        height: 32px
     }
 
     20% {
         transform: translateY(4px);
-        height: 30px
+        height: 28px
     }
 
     30% {

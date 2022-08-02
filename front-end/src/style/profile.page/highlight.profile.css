@@ -1,0 +1,59 @@
+#highlightsDiv{
+    border: 1px solid #e0dfdc;
+    width: 782px;
+    height: 177px;
+    margin: 8px 0px 0px 0px;
+    border-radius: 8px;
+    background-color: white;
+    padding: 12px;
+    box-sizing: border-box;
+}
+.heading1{
+    font-size: 20px;
+    color: #000000e6;
+    font-weight: 600;
+    line-height: 25px;
+    font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto;
+    /* border: 1px solid black; */
+    margin: 0px;
+    padding: 12px 12px 0px 12px;
+    text-align: left;
+}
+#institutionDiv{
+    /* border: 1px solid black; */
+    padding:12px;
+    display: flex;
+}
+#institutionImgDiv{
+    /* border: 1px solid black; */
+    height: 48px;
+    width: 48px;
+}
+#institutionImgDiv img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+#institutionDetailsDiv{
+    /* border: 1px solid black; */
+    margin-left: 5px;
+}
+#institutionDetailsDiv h1{
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    line-height: 24px;
+    color: #191919;
+    cursor: pointer;
+}
+#institutionDetailsDiv h1:hover{
+    text-decoration: underline;
+}
+.smallTxt1{
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000e6;
+    margin-bottom: 5px;
+}

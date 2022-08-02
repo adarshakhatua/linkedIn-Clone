@@ -1,13 +1,14 @@
-import "../style/feedpage.css";
+import "../style/feed.page/feedpage.css";
 import { TabTitle } from "../utils/generalFunction";
-import { UserFeed } from "../components/user.feed";
-import { DiscoverFeed } from "../components/discover.feed";
-import { CreatePostFeed } from "../components/createPost.feed";
-import { NewsFeed } from "../components/news.feed";
-import { AdFeed } from "../components/ad.feed";
-import { AboutFeed } from "../components/about.feed";
-import { MessagingFeed } from "../components/message.feed";
-import { Contentfeed } from "../components/content.feed";
+import { UserFeed } from "../components/feed.page/user.feed";
+import { DiscoverFeed } from "../components/feed.page/discover.feed";
+import { CreatePostFeed } from "../components/feed.page/createPost.feed";
+import { NewsFeed } from "../components/feed.page/news.feed";
+import { AdFeed } from "../components/feed.page/ad.feed";
+import { AboutFeed } from "../components/feed.page/about.feed";
+import { MessagingFeed } from "../components/feed.page/message.feed";
+import { Contentfeed } from "../components/feed.page/content.feed";
+
 
 
 import { useEffect } from "react";
