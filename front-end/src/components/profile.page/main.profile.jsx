@@ -10,7 +10,7 @@ export const MainProfile = () => {
                 <img src="https://media-exp1.licdn.com/dms/image/C4D16AQGxwHmeOpLyvQ/profile-displaybackgroundimage-shrink_200_800/0/1646134585042?e=1665014400&v=beta&t=mEKvJEEfAi9WmT8jwSyQMzBVVHS5OTazShmMfRV4mkE" alt="" />
             </div>
 
-            <div id="profileImageDiv">
+            <div id="mainprofileImageDiv">
                 <img src="https://media-exp1.licdn.com/dms/image/C4D03AQGaY9kNIYhLYA/profile-displayphoto-shrink_200_200/0/1657966610468?e=1665014400&v=beta&t=H-ECAYgL5hh8KIPx9wJlW7xMkbLtl7NdDf7jUOY0BKU" alt="" />
             </div>
 

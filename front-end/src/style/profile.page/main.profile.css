@@ -20,7 +20,7 @@
     object-fit: cover;
 }
 
-#profileImageDiv{
+#mainprofileImageDiv{
     border: 4px solid white;
     height: 152px;
     aspect-ratio: 1;
@@ -31,7 +31,7 @@
     overflow: hidden;
 }
 
-#profileImageDiv img{
+#mainprofileImageDiv img{
     height: 100%;
     width: 100%;
     object-fit: cover;
