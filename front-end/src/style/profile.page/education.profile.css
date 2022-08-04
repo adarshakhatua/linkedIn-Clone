@@ -1,0 +1,15 @@
+#educationSingleDiv{
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    margin: 10px 0px 0px 0px;
+    border-bottom: 1px solid #e4e4e4e6;
+    padding: 10px;
+}
+#educationDetailsDiv{
+    margin: 0px 10px;
+}
+.instituteImage{
+    background-image: url("https://static-exp1.licdn.com/sc/h/8zzzkhxduv0r11cuxbs48pg03");
+    background-size: cover;
+}

@@ -37,6 +37,7 @@ export const AllRoutes = () => {
             element={<>
                 <NavMain></NavMain>
                 <ProfilePage></ProfilePage>
+                
             </>}
         ></Route>
 
