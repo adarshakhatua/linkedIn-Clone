@@ -1,7 +1,8 @@
 import "../../style/profile.page/interests.profile.css";
 import { VerticalOptions } from "./recommendations.profile";
 import { BsArrowRight } from "react-icons/bs"
-
+import { GoPlus } from "react-icons/go";
+import { InfluencerTag } from "../custom.icon";
 
 
 export const InterestProfile = () => {
@@ -11,6 +12,7 @@ export const InterestProfile = () => {
             <VerticalOptions options={["Influencers", "Companies", "Schools"]} />
 
             <div id="interestContentDiv">
+                <InterestSingle/>
                 <InterestSingle/>
             </div>
 
@@ -29,9 +31,10 @@ const InterestSingle = () => {
             </div>
 
             <div id="interestSingleDetails">
-                <h1 className="heading2">Satya Nadella</h1>
+                <h1 className="heading2">Satya Nadella <span><InfluencerTag/></span></h1>
                 <h4 className="smallTxt1">Chairman and CEO at Microsoft</h4>
                 <h5 className="smallTxt1 smallTxtColorFade">9,996,949 followers</h5>
+                <button className="button2"> <GoPlus /> Follow</button>
             </div>
 
         </div>

@@ -1,0 +1,30 @@
+#alsoViewedDiv h1{
+    margin: 0px;
+    /* border: 1px solid black; */
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000e6;
+    align-self: flex-start;
+}
+#viewedSingleDiv{
+    /* border: 1px dashed blue; */
+    /* width: 290px; */
+    display: flex;
+    margin: 20px 0px 10px;
+}
+#viewedSingleImg{
+    height: 48px;
+    width: 48px;
+    border-radius:50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+#viewedSingleImg img{
+    height: 100%;
+    width:100%;
+}
+#viewedSingleContent{
+    /* border: 1px solid black; */
+    text-align: left;
+    margin-left: 10px;
+}

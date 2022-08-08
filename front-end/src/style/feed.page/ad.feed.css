@@ -1,13 +1,22 @@
 #AdFeed{
+    height: 250px;
+}
+.componentDiv2{
     border: 1px solid #EBEBEB;
     background-color: white;
-    height: 250px;
-    width: 315px;
     border-radius: 8px;
+    width: 315px;
     padding: 12px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin:5px 0px;
+}
+.AdFeed{
+    background-image: url("https://media.licdn.com/media/AAYQAgTPAAgAAQAAAAAAADVuOvKzTF-3RD6j-qFPqhubBQ.png");
+    background-size: 94% 100%;
+    background-position: 50%;
+    background-repeat: no-repeat;
 }
 #AdOptions{
     /* border: 1px solid black; */

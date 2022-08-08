@@ -5,7 +5,7 @@ import { BiDotsHorizontalRounded } from "react-icons/bi"
 
 export const AdFeed = () => {
     return (
-        <div id="AdFeed">
+        <div id="AdFeed" className="componentDiv2">
             <div id="AdOptions">Ad <BiDotsHorizontalRounded/></div>
             <div id="AdTitle">Think Data Centre, Think STT GDC India</div>
             <div id="AdLogo">

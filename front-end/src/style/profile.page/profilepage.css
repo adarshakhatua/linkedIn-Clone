@@ -1,6 +1,13 @@
 #profilePage{
     border: 1px solid black;
-
     padding: 75px 0px 50px 385px;
     background-color: #f3f2ef;
+    display: flex;
+}
+#profileSideContent{
+    /* border: 1px solid black; */
+    margin: 0px 20px;
+}
+#viewedSingleContent button{
+    margin: 14px 0px;
 }

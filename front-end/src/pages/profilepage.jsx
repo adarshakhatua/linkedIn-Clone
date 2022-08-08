@@ -10,23 +10,34 @@ import { SkillsProfile } from "../components/profile.page/skills.profile";
 import { RecommendationsProfile } from "../components/profile.page/recommendations.profile";
 import { ProjectsProfile } from "../components/profile.page/projects.profile";
 import { InterestProfile } from "../components/profile.page/interests.profile";
-
+import { AdFeed } from "../components/feed.page/ad.feed";
+import { AlsoViewed } from "../components/profile.page/alsoviewed.profile";
 
 
 export const ProfilePage = () => {
     return (
         <div id="profilePage">
-            <MainProfile />
-            <HighLights />
-            <About />
-            <MessagingFeed />
-            <ExperienceProfile />
-            <EducationProfile />
-            <LicenceAndCertificatesProfile />
-            <SkillsProfile />
-            <RecommendationsProfile />
-            <ProjectsProfile />
-            <InterestProfile/>
+
+            <div id="profileMainContent">
+                <MainProfile />
+                <HighLights />
+                <About />
+                <MessagingFeed />
+                <ExperienceProfile />
+                <EducationProfile />
+                <LicenceAndCertificatesProfile />
+                <SkillsProfile />
+                <RecommendationsProfile />
+                <ProjectsProfile />
+                <InterestProfile />
+            </div>
+
+            <div id="profileSideContent">
+                <AdFeed />
+                <AlsoViewed/>
+                <AdFeed />
+            </div>
+
         </div>
     )
 }
