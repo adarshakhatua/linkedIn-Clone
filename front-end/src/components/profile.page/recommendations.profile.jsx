@@ -14,6 +14,7 @@ export const RecommendationsProfile = () => {
             <div id="recommendationDiv">
                 <RecommendationSingle/>
                 <RecommendationSingle/>
+
             </div>
 
             <button className="moreButton"> Show all { } licenses & certifications <BsArrowRight/></button>
@@ -25,7 +26,7 @@ export const RecommendationsProfile = () => {
 //options will have to be an array
 export const VerticalOptions = ({ options }) => {
 
-    const[option,setOption]=useState(options[0])
+    const [option, setOption] = useState(options ? options[0]:"")
     const handleOption = (e) => {
         setOption(e.target.textContent);
     }

@@ -9,6 +9,7 @@ import { LicenceAndCertificatesProfile } from "../components/profile.page/licenc
 import { SkillsProfile } from "../components/profile.page/skills.profile";
 import { RecommendationsProfile } from "../components/profile.page/recommendations.profile";
 import { ProjectsProfile } from "../components/profile.page/projects.profile";
+import { InterestProfile } from "../components/profile.page/interests.profile";
 
 
 
@@ -24,7 +25,8 @@ export const ProfilePage = () => {
             <LicenceAndCertificatesProfile />
             <SkillsProfile />
             <RecommendationsProfile />
-            <ProjectsProfile/>
+            <ProjectsProfile />
+            <InterestProfile/>
         </div>
     )
 }
