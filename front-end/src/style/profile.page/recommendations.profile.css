@@ -1,0 +1,55 @@
+.verticalOptions{
+    border-bottom: 1px solid #dcdcdc;
+    height: 48px;
+    display: flex;
+    margin: 10px;
+}
+.verticalOptions .selectedDiv{
+    border-bottom: 2px solid #057642;
+    color: #057642;
+}
+.verticalOptionsSingle{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    margin-left:10px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 20px;
+    color: #00000099;
+    border-bottom: 2px solid white;
+    cursor: pointer;
+}
+#recommendationDiv{
+    /* border: 1px solid black; */
+    margin: 10px 10px 27px; 
+}
+#recommendationSingleDiv{
+    border-bottom: 1px solid #d3d1d1;
+    display: flex;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+#recommendationSingleImg{
+    /* border: 1px solid red; */
+    height: 48px;
+    width: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+#recommendationSingleImg img{
+    height: 100%;
+    width: 100%;
+}
+#recommendationSingleContent{
+    /* border: 1px solid black; */
+    text-align: left;
+    margin-left:10px;
+    width: 700px;
+}
+#recommendedWords{
+    margin-top: 10px;
+}

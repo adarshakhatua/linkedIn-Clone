@@ -22,6 +22,7 @@
     color: #000000e6;
     margin: 0px;
     text-align: left;
+    cursor: pointer;
 }
 .heading2:hover{
     color: #0a66c2;

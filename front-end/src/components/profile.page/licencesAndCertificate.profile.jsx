@@ -29,7 +29,7 @@ export const LicenceAndCertificatesProfile = () => {
                 duration={" Mar 2022 · No Expiration Date"}
                 credentialId={"15ac4c2982da"} />
             
-            <button id="showCredential">Show all { } licenses & certifications <BsArrowRight/></button>
+            <button id="showCredential" className="moreButton">Show all { } licenses & certifications <BsArrowRight/></button>
 
         </div>
     )

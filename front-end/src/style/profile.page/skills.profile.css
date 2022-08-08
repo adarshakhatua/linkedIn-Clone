@@ -1,0 +1,31 @@
+#skillNameTxt:hover{
+    color:#000000e6;
+    text-decoration: none;
+}
+#skillTxtSmall{
+    /* border: 1px solid black; */
+    margin: 0px 10px;
+    padding: 0px;
+    color: #000000e6;
+}
+
+#skillTxtSmall:hover{
+    color: #0a66c2;
+    text-decoration: underline;
+}
+
+#sigleSkillEndorsementDiv{
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+#sigleSkillEndorsementDiv svg{
+    color: #414141e6;
+}
+#sigleSkill{
+    /* border: 1px solid black; */
+    margin: 10px 10px 20px;
+    padding: 10px 0px 20px;
+    border-bottom: 1px solid#dedede;
+}

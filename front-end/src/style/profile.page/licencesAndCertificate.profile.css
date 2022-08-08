@@ -1,12 +1,12 @@
 #licenceAndCertificatedDiv{
-    padding-bottom: 50px;
+    padding-bottom: 30px;
 }
 
 #licenceAndCertificateSingle{
     display: flex;
     align-items: flex-start;
     /* border: 1px solid black; */
-    margin: 10px 0px;
+    margin: 10px 0px 9px;
     padding: 10px 10px 20px 10px;
     border-bottom: 1px solid rgb(222, 222, 222);
 }
@@ -17,7 +17,7 @@
 .smallTxtColorFade{
     color: #00000099;
 }
-#showCredential{
+.moreButton{
     background-color: white;
     border: transparent;
     display: flex;
@@ -26,16 +26,18 @@
     width: 100%;
     height: 40px;
     font-size: 16px;
-    font-weight:600;
+    font-weight: 600;
     line-height: 20px;
     color: #00000099;
-    position:absolute;
+    position: absolute;
     bottom: 0px;
     left: 0px;
+    border-top:1px solid #dedede ;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
     cursor: pointer;
 }
-#showCredential:hover{
+
+.moreButton:hover{
     background-color: #ededed;
 }

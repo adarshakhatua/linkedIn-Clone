@@ -5,7 +5,10 @@ import { About } from "../components/profile.page/about.profile";
 import { MessagingFeed } from "../components/feed.page/message.feed";
 import { ExperienceProfile } from "../components/profile.page/experience.profile";
 import { EducationProfile } from "../components/profile.page/education.profile";
-import { LicenceAndCertificatesProfile } from "../components/profile.page/licencesAndCertificate.profile"
+import { LicenceAndCertificatesProfile } from "../components/profile.page/licencesAndCertificate.profile";
+import { SkillsProfile } from "../components/profile.page/skills.profile";
+import { RecommendationsProfile } from "../components/profile.page/recommendations.profile";
+import { ProjectsProfile } from "../components/profile.page/projects.profile";
 
 
 
@@ -18,7 +21,10 @@ export const ProfilePage = () => {
             <MessagingFeed />
             <ExperienceProfile />
             <EducationProfile />
-            <LicenceAndCertificatesProfile/>
+            <LicenceAndCertificatesProfile />
+            <SkillsProfile />
+            <RecommendationsProfile />
+            <ProjectsProfile/>
         </div>
     )
 }
