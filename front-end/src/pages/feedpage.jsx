@@ -26,7 +26,7 @@ export const FeedPage = () => {
     //to update the user after initial loading
     useEffect(() => {
         setUser(document.getElementById("userFeed"));
-        setNews(document.getElementById("newsFeed"))
+        setNews(document.getElementById("newsFeed"));
     }, []);
     
     let options = { root: null, rootMargin: "-74px 0px 0px 0px" };

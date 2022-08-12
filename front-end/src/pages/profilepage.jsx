@@ -12,9 +12,39 @@ import { ProjectsProfile } from "../components/profile.page/projects.profile";
 import { InterestProfile } from "../components/profile.page/interests.profile";
 import { AdFeed } from "../components/feed.page/ad.feed";
 import { AlsoViewed } from "../components/profile.page/alsoviewed.profile";
+import { MayKnowProfile } from "../components/profile.page/mayKnow.profile";
+import { useEffect, useState } from "react";
+
 
 
 export const ProfilePage = () => {
+
+    //positioning addfeed.....
+    const [mayknow, setMayknow] = useState(document.getElementById("mayKnowProfileDiv"));
+
+    useEffect(() => { setMayknow() }, []);
+    
+    const options = {
+        root: null,
+        rootMargin:"-75px 0px 0px 0px"
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            console.log(entry.isIntersecting);
+            if (!entry.isIntersecting) {
+                // document.getElementById("AdFeed").style.position = "absolute";
+            }
+        })
+        
+    }, options)
+
+    let x = document.getElementById("mayKnowProfileDiv")
+
+    
+    useEffect(() => { if (x) { observer.observe(x) } })
+
+
     return (
         <div id="profilePage">
 
@@ -35,6 +65,7 @@ export const ProfilePage = () => {
             <div id="profileSideContent">
                 <AdFeed />
                 <AlsoViewed/>
+                <MayKnowProfile />
                 <AdFeed />
             </div>
 

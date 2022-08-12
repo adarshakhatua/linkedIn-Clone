@@ -1,4 +1,4 @@
-#alsoViewedDiv h1{
+.smallHeading{
     margin: 0px;
     /* border: 1px solid black; */
     font-size: 16px;
@@ -28,9 +28,22 @@
     text-align: left;
     margin-left: 10px;
 }
+.morebutton2{
+    width: 340px;
+    height: 44px;
+    position: relative;
+    bottom: -12px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid #e5e5e5e6;
+    background-color: white;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    color: rgb(0 0 0 / 60%);
+    cursor: pointer;
+}
+.morebutton2:hover{
+    background-color: #f1f1f1e6;
+}
 
-/* #viewedSingleContent {
-     border: 1px solid black; 
-    text-align: left;
-    margin-left: 10px;
-} */
