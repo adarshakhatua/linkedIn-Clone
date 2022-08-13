@@ -3,10 +3,13 @@
     padding: 75px 0px 50px 385px;
     background-color: #f3f2ef;
     display: flex;
+    flex-wrap: wrap;
 }
 #profileSideContent{
     /* border: 1px solid black; */
     margin: 0px 20px;
+    box-sizing: content-box;
+    height: fit-content;
 }
 #viewedSingleContent button{
     margin: 14px 0px;

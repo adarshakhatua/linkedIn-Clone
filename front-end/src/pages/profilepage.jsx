@@ -13,6 +13,7 @@ import { InterestProfile } from "../components/profile.page/interests.profile";
 import { AdFeed } from "../components/feed.page/ad.feed";
 import { AlsoViewed } from "../components/profile.page/alsoviewed.profile";
 import { MayKnowProfile } from "../components/profile.page/mayKnow.profile";
+import { FooterProfile } from "../components/profile.page/footer.profile";
 import { useEffect, useState } from "react";
 
 
@@ -20,29 +21,30 @@ import { useEffect, useState } from "react";
 export const ProfilePage = () => {
 
     //positioning addfeed.....
-    const [mayknow, setMayknow] = useState(document.getElementById("mayKnowProfileDiv"));
+    const [mayknow, setMayknow] = useState(document.getElementById("profileSideContent"));
 
-    useEffect(() => { setMayknow() }, []);
+    useEffect(() => { setMayknow(document.getElementById("profileSideContent")) }, []);
     
     const options = {
         root: null,
-        rootMargin:"-75px 0px 0px 0px"
+        rootMargin:"-355px 0px 0px 0px"
     };
     
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             console.log(entry.isIntersecting);
-            if (!entry.isIntersecting) {
-                // document.getElementById("AdFeed").style.position = "absolute";
+            if (entry.isIntersecting===false) {
+                document.querySelector(".addfeedscnd").style = "position:fixed;top:75px";
+                document.getElementById("profileSideContent").style = "padding-bottom:280px";
             }
-        })
-        
+            else {
+                document.querySelector(".addfeedscnd").style = "position:static";  
+                document.getElementById("profileSideContent").style = "padding-bottom:0px";
+            }
+        })   
     }, options)
 
-    let x = document.getElementById("mayKnowProfileDiv")
-
-    
-    useEffect(() => { if (x) { observer.observe(x) } })
+    useEffect(() => { if (mayknow) { observer.observe(mayknow) } })
 
 
     return (
@@ -66,8 +68,10 @@ export const ProfilePage = () => {
                 <AdFeed />
                 <AlsoViewed/>
                 <MayKnowProfile />
-                <AdFeed />
+                <AdFeed clssNm={"addfeedscnd"}/>
             </div>
+
+            <FooterProfile/>
 
         </div>
     )

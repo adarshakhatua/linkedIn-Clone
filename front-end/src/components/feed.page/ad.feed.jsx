@@ -3,9 +3,9 @@ import { ProfileImage } from "../profileImage";
 import { BiDotsHorizontalRounded } from "react-icons/bi"
 
 
-export const AdFeed = () => {
+export const AdFeed = ({ clssNm }) => {
     return (
-        <div id="AdFeed" className="componentDiv2">
+        <div id="AdFeed" className={`componentDiv2 ${clssNm}`} >
             <div id="AdOptions">Ad <BiDotsHorizontalRounded/></div>
             <div id="AdTitle">Think Data Centre, Think STT GDC India</div>
             <div id="AdLogo">
