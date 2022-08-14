@@ -39,7 +39,9 @@ router.post("/:userId/", fileUpload("photo","single"), async (req, res) => {
 
 router.patch("/:userId/:id", fileUpload("photo", "single"), async (req, res) => {
     try {
-        const post = await Post.findByIdAndUpdate(req.params.id, { ...req.body, post_media: req.file.path }, { new: true });
+        let post;
+        if (req.file) { await Post.findByIdAndUpdate(req.params.id, { ...req.body, post_media: req.file.path }, { new: true }); }
+        else { await Post.findByIdAndUpdate(req.params.id, req.body, { new: true }); }
         return res.status(200).send({ post: post });
     }
     catch (err) {

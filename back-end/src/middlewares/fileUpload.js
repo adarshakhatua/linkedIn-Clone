@@ -43,8 +43,11 @@ const uploadFiles = (formKey,method) => {
         else if (method === "multiple") {
             uploadItem = upload.any(formKey);
         }
-
+        else if (method === "fields") {
+            uploadItem = upload.fields(formKey);
+        }
         return uploadItem(req, res, function (err) {
+            
             if (err instanceof multer.MulterError) {
                 // A Multer error occurred when uploading.
                 return res.status(500).send({ message: err.message });
