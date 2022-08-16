@@ -37,7 +37,7 @@ router.post("/", uploadFiles([{ name: "profile_pic", maxCount: 1, }, { name: "co
         return res.status(500).send({ message: err.message });
     }
 })
-
+//patch request 
 router.patch("/:id", uploadFiles([{ name: "profile_pic", maxCount: 1, }, { name: "cover_pic", maxCount: 1, }], "fields"),  async (req, res) => {
     try {
         const userProfile = await UserProfile.findByIdAndUpdate(req.params.id, { ...req.body, profile_pic: req.files.profile_pic[0]?.path, cover_pic: req.files.cover_pic[0]?.path }, { new: true });
