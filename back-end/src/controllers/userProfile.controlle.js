@@ -38,6 +38,7 @@ router.post("/", uploadFiles([{ name: "profile_pic", maxCount: 1, }, { name: "co
     }
 })
 
+
 router.post("/profile_pic", uploadFiles("profile_pic", "single"), async (req, res) => {
     try {
         let userProfile;
