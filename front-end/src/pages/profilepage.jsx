@@ -46,7 +46,6 @@ export const ProfilePage = () => {
 
     useEffect(() => { if (mayknow) { observer.observe(mayknow) } })
 
-
     return (
         <div id="profilePage">
 
